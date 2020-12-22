@@ -1,0 +1,198 @@
+ <!DOCTYPE html>
+    <html>
+  <head>
+   <title>bell</title>
+   <link rel="icon" href="/bonsho.png">
+   /*<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+   <link rel="manifest" href="/site.webmanifest">
+   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">*/
+    <script>
+      function displayvol() {
+        var vol = document.getElementById("volumebar").value;
+        document.getElementById("volout").innerHTML = vol;
+        var bell = document.getElementById("bell").volume=(vol/100)
+        }
+      function start() {
+        document.getElementById("hrs").select();
+        startTime();
+        document.body.style.backgroundColor = "black";
+        }
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500); // keeps function running every half second
+        }
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+      function settime() {
+        var clicktime = new Date();
+        var ye = clicktime.getFullYear();
+        var mo = clicktime.getMonth();
+        var da = clicktime.getDate();
+        var hrs = document.getElementById("hrs").value;
+        var mts = document.getElementById("mts").value;
+        var scs = document.getElementById("scs").value;
+        var ms = clicktime.getMilliseconds();
+        var alarmtime = new Date(ye,mo,da,hrs,mts,scs,ms);
+        var waittime = alarmtime.getTime() - clicktime.getTime();
+        if (waittime <= 0) {alert("try again"); return false};
+        document.getElementById("setbutton").disabled=true;
+        document.getElementById("stopbutton").disabled=false;
+        setTimeout(function(){bell();},(waittime-250));
+        }
+      function stoptimer() {
+        var bell = document.getElementById("bell");
+        bell.currentTime = 40;
+        document.getElementById("setbutton").disabled=false;
+        }
+      function bell() {
+        var bell = document.getElementById("bell");
+        var volnormalized = document.getElementById("volumebar").value/100;
+        bell.volume = volnormalized;
+        bell.pause();
+        bell.currentTime = 0;
+        bell.play();
+        document.getElementById("setbutton").disabled=false;
+        document.getElementById("stopbutton").disabled=true;
+        }
+      </script>
+    <style>
+      .alles {
+        position: absolute;
+        margin: 0;
+        top: 38.2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: monospace;
+        font-size: 12.5pt;
+        color: #b2b2b2;
+        text-align: center;
+        }
+      .center {
+        margin: auto;
+        font-family: monospace;
+        color: #b2b2b2;
+        padding: 4px;
+        }
+      .buttonsmalltext {
+        background-color: black;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 9pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button {
+        background-color: black;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button:hover {
+        background-color: #606060;
+        color: #b2b2b2;
+        }
+      .button:disabled {
+        opacity: .5;
+        }
+      .buttonsmalltext:disabled {
+        opacity: .5;
+        }
+      .roundy {border-radius: 12px;}
+      input[type="text"] {
+        font-size: 12pt;
+        font-family: monospace;
+        background-color: #202020;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        text-align: center;
+        }
+      .slider {
+        -webkit-appearance: none;
+        height: 5px;
+        border-radius: 2px;
+        background: #404040;
+        }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #606060;
+        }
+      </style>
+    <audio id="bell">
+      <source src="40-second-zen-bell-B.mp3" type="audio/mpeg">
+      </audio>
+    </head>
+  <body onload = "start()">
+    <div class="alles">
+      <div class="center" id="clock"></div>
+      
+        <br><br><br><br><br>
+      <p class="center">alarm time</p>
+      
+        <div style="line-height:90%;">
+          <br>
+          </div>
+      <div class="center" id="hrminsecinputs">
+        <input type="text" size="2" maxlength="2" id="hrs" onFocus="select()" /> :
+        <input type="text" size="2" maxlength="2" id="mts" onFocus="select()" /> :
+        <input type="text" size="2" maxlength="2" id="scs" onFocus="select()" />
+        </div>
+      
+        <div style="line-height:90%;">
+          <br>
+          </div>
+        <div style="text-align:center;">
+      <div id="SET">
+        <input type="button" class="button roundy center" id="setbutton" value="set" onClick="settime()" />
+        </div>
+      
+        <div style="line-height:105%;">
+          <br>
+          </div>
+      <div id="STOP">
+        <input type="button" class="buttonsmalltext roundy center" id="stopbutton" value="stop" disabled="true" onClick="stoptimer()" />
+        </div>
+      
+        <div style="line-height:105%;">
+          <br>
+          </div>
+      <div id="VOLBAR">
+        <input type="range" id="volumebar" min="0" max="100" class="slider" />
+        </div>
+      <div id="VOLVAL">
+        <p style="color:#7f7f7f; font-size:9pt">volume: <span id="volout">50</span></p>
+        </div>
+        <script>
+          document.getElementById("volumebar").oninput = function() {displayvol()};
+          </script>
+      <br>
+        </div>
+    </body>
+    </html>
+  
+    </html>
