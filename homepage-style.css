@@ -46,6 +46,10 @@ body {
   .sticky + .content {
     padding-top: 90px;
   }
+
+  .vl{
+    border-left: 3px solid rgb(62, 78, 62);
+  }
   
   /*navigation bar style*/
     .navbar {
