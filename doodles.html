@@ -5,6 +5,8 @@
 <link href='https://fonts.googleapis.com/css?family=Spectral SC' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
 <link href='homepage-style.css' rel='stylesheet'>
+<link href='pictures-style.css' rel='stylesheet'>
+
 </head>
 <body>
 
@@ -36,6 +38,12 @@
   <p> Okay fine, you caaaannnn not tell because no I'm not going to not concede, I don't know! You really strike an easy bargain, bar gain, ba grain. A kind of sheep, distilled into a seed. Sheep seed. Very satisfying bunch of vowels there.</p>
   </div>
 
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+  </div>
+
 <script>
 window.onscroll = function() {myFunction()};
 
@@ -48,6 +56,14 @@ function myFunction() {
   } else {
     header.classList.remove("sticky");
   }
+}
+
+function expanderfunk(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
 }
 </script>
 
