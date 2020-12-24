@@ -20,7 +20,7 @@ body {
   .header {
     height: 50px;
     font-family: 'Spectral SC';
-    padding: 6px 0px 6px 0px; /*top right bottom left*/
+    padding: 6px 0px; /*top/bottom right/left*/
     /*background-image: linear-gradient(white, #fefefe);*/
     background-color: white;
     color: black;
@@ -53,6 +53,7 @@ body {
   
   /*navigation bar style*/
     .navbar {
+      z-index: 1;
       list-style-type: none;
       margin: 0;
       padding: 0;
