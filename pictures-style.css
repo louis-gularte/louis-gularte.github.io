@@ -4,18 +4,20 @@
     min-width: 80px;
     max-width: 100px;
     padding: 10px;
+    align-items:center;
   }
   
   /* Style the images inside the grid */
   .column img {
     opacity: 0.65; 
     cursor: pointer; 
+    border-radius:5px;
   }
   
   .column img:hover {
     opacity: 1;
   }
-  
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -39,6 +41,12 @@
     cursor: pointer;
     transition: 0.3s;
     opacity: .6;
+    /*padding: 10px;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    /*height: 100px;
+    /*max-width: 100px;
+    margin-top: auto;*/
   }
   
   .fadey:hover {opacity: 1;}
