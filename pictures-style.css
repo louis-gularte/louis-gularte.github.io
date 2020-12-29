@@ -59,12 +59,11 @@
   
   /* Modal Content (image) */
   .modal-content {
-    /*margin: auto;
-    /*display: block;*/
+    margin: auto;
+    display: block;
     max-width: 90%;
     max-height: 90%;
     position: absolute;
-    /*left: 50%;*/
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -99,8 +98,8 @@
     to {transform:scale(1)}
   }*/
 
-  .close:hover,
-  .close:focus {
+  .closebtn:hover,
+  .closebtn:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
