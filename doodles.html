@@ -45,26 +45,41 @@
 </div>
 
 <div style="max-width:90%; margin:auto; border:2px solid black; z-index:-1" class='center'>
-  <img id="AAZT" class="boxpicher" src="images/AAZT-portrait-circle.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  <img id="1970s" class="boxpicher" src="images/doodles/1970's.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
   
-  <img id="sardines" class="boxpicher" src="images/slow-sardines.gif" style="z-index:-1;" onclick="throwintomodal(this);"></img>
+  <img id="buddha" class="boxpicher" src="images/doodles/Buddha by bonsai bodhi tree.png" style="z-index:-1;" onclick="throwintomodal(this);"></img>
   
-  <img id="AAZT" class="boxpicher" src="images/AAZT-portrait-circle.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  <img id="dancer" class="boxpicher" src="images/doodles/dancer.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
   
-  <img id="sardines" class="boxpicher" src="images/slow-sardines.gif" style="z-index:-1;" onclick="throwintomodal(this);"></img>
+  <img id="face" class="boxpicher" src="images/doodles/face.png" style="z-index:-1;" onclick="throwintomodal(this);"></img>
   
-  <img id="AAZT" class="boxpicher" src="images/AAZT-portrait-circle.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  <img id="foxircle" class="boxpicher" src="images/doodles/fox-circle.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
   
-  <img id="sardines" class="boxpicher" src="images/slow-sardines.gif" style="z-index:-1;" onclick="throwintomodal(this);"></img>
+  <img id="headncan" class="boxpicher" src="images/doodles/head-and-can.png" style="z-index:-1;" onclick="throwintomodal(this);"></img>
   
-  <img id="AAZT" class="boxpicher" src="images/AAZT-portrait-circle.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  <img id="Lillian" class="boxpicher" src="images/doodles/Lillian.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
   
-  <img id="sardines" class="boxpicher" src="images/slow-sardines.gif" style="z-index:-1;" onclick="throwintomodal(this);"></img>
+  <img id="newface" class="boxpicher" src="images/doodles/newface.png" style="z-index:-1;" onclick="throwintomodal(this);"></img>
+
+  <img id="polyps" class="boxpicher" src="images/doodles/polyps.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  
+  <img id="regina" class="boxpicher" src="images/doodles/regina.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  
+  <img id="laptop" class="boxpicher" src="images/doodles/self portrait in dark laptop screen.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  
+  <img id="stuhl" class="boxpicher" src="images/doodles/Stuhl bei Thalia.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  
+  <img id="whalething" class="boxpicher" src="images/doodles/whalething.png" style="z-index:-1" onclick="throwintomodal(this);"></img>
+  
 </div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-  <div style="float:left; position:relative; width:100%; height:100%;"><span class="closebtn">&times;</span><img class="modal-content" id="img01"></div>
+  <div style="float:left; position:relative; width:100%; height:100%;">
+    <span class="closebtn">&times;</span>
+    <img class="modal-content" style="width:90%" id="img01"></div>
+    <a class="prev" style="position:absolute; right:1em; z-index:10" onclick="plusSlides(-1)">❮</a>
+    <a class="next" style="position:absolute; right:0; z-index:10" onclick="plusSlides(1)">❯</a>
   <div id="caption"></div>
 </div>
 
@@ -100,7 +115,7 @@ function throwintomodal(imgs) {
   // var imgText = document.getElementById("imgtext");
   modal.style.display = "block";
   expandImg.src = imgs.src;
-  imgText.innerHTML = imgs.alt;
+  //imgText.innerHTML = imgs.alt;
 }
 
 // Get the <span> element that closes the modal
@@ -109,6 +124,29 @@ var span = document.getElementsByClassName("closebtn")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() { 
   modal.style.display = "none";
+}
+
+// gallery stuff
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("boxpicher");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  //for (i = 0; i < slides.length; i++) {
+  //    slides[i].style.display = "none";
+  //}
+  expandImg.src = slides[slideIndex-1].src;
 }
 </script>
 
