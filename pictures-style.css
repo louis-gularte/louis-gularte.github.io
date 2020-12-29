@@ -34,14 +34,14 @@
     text-shadow: 0px 0px 5px black;
   }
 
-  #myImg {
+  .fadey {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
     opacity: .6;
   }
   
-  #myImg:hover {opacity: 1;}
+  .fadey:hover {opacity: 1;}
   
   /* The Modal (background) */
   .modal {
