@@ -51,7 +51,7 @@
     padding: 0 0 0 0; /* Location of the box */
     bottom: 0;
     width: 100%;
-    height: auto;
+    height: 50%;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
@@ -59,10 +59,15 @@
   
   /* Modal Content (image) */
   .modal-content {
-    margin: auto;
-    display: block;
+    /*margin: auto;
+    /*display: block;*/
     max-width: 90%;
-    height: auto;
+    max-height: 90%;
+    position: absolute;
+    /*left: 50%;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
   
   /* Caption of Modal Image */
