@@ -6,7 +6,23 @@
     padding: 10px;
     align-items:center;
   }
-  
+
+  .boxpicher {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    opacity: 0.65; 
+    cursor: pointer; 
+    margin: 10px;
+  }
+
+  .boxpicher:hover {
+    opacity: 1;
+  }
+
   /* Style the images inside the grid */
   .column img {
     opacity: 0.65; 
