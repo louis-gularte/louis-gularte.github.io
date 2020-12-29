@@ -8,10 +8,15 @@ body {
     text-decoration: none;
   }
 
+  ul:not(.navbar) {
+    list-style-type: none;
+  }
+
   ul:not(.navbar) li::marker {
+    list-style-type: none;
     color: rgb(119, 134, 119);
     font-size: .8em;
-    content: "◇   ";
+    content: "\25C7     ";
   }
 
   .top-container {
