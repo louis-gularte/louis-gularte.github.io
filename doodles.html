@@ -12,6 +12,7 @@
 <script>
   var creeponoff = 0;
   var goofonoff = 0;
+  var slideIndex = 1;
 </script>
 </head>
 <body>
@@ -56,32 +57,33 @@
   </p>
   </div>
 
+<!-- The doodles -->
 <div style="max-width:90%; margin:auto; border-radius:7px; z-index:-1; display:flex; flex-wrap:wrap; justify-content:center;" class='center'>
-  <img id="1970s" class="boxpicher" src="images/doodles/1970's.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="1970s" class="boxpicher normalpic" src="images/doodles/1970's.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="buddha" class="boxpicher" src="images/doodles/Buddha by bonsai bodhi tree.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
+  <img id="buddha" class="boxpicher normalpic" src="images/doodles/Buddha by bonsai bodhi tree.png" style="z-index:1;" onclick="throwintomodal(this); "></img>
   
-  <img id="dancer" class="boxpicher" src="images/doodles/dancer.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="dancer" class="boxpicher normalpic" src="images/doodles/dancer.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="whalething" class="boxpicher" src="images/doodles/whalething.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="whalething" class="boxpicher normalpic" src="images/doodles/whalething.png" style="z-index:1" onclick="throwintomodal(this);"></img>
 
-  <img id="face" class="boxpicher" src="images/doodles/face.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
+  <img id="face" class="boxpicher normalpic" src="images/doodles/face.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
   
-  <img id="foxircle" class="boxpicher" src="images/doodles/fox-circle.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="foxircle" class="boxpicher normalpic" src="images/doodles/fox-circle.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="headncan" class="boxpicher" src="images/doodles/head-and-can.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
+  <img id="headncan" class="boxpicher normalpic" src="images/doodles/head-and-can.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
   
-  <img id="newface" class="boxpicher" src="images/doodles/newface.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
+  <img id="newface" class="boxpicher normalpic" src="images/doodles/newface.png" style="z-index:1;" onclick="throwintomodal(this);"></img>
 
-  <img id="polyps" class="boxpicher" src="images/doodles/polyps.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="polyps" class="boxpicher normalpic" src="images/doodles/polyps.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="regina" class="boxpicher" src="images/doodles/regina.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="regina" class="boxpicher normalpic" src="images/doodles/regina.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="laptop" class="boxpicher" src="images/doodles/self portrait in dark laptop screen.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="laptop" class="boxpicher normalpic" src="images/doodles/self portrait in dark laptop screen.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
-  <img id="stuhl" class="boxpicher" src="images/doodles/Stuhl bei Thalia.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="stuhl" class="boxpicher normalpic" src="images/doodles/Stuhl bei Thalia.png" style="z-index:1" onclick="throwintomodal(this);"></img>
 
-  <img id="Lillian" class="boxpicher" src="images/doodles/Lillian.png" style="z-index:1" onclick="throwintomodal(this);"></img>
+  <img id="Lillian" class="boxpicher normalpic" src="images/doodles/Lillian.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
   <img id="duoctopus" class="boxpicher goofier" src="images/doodles/duoctopus. smaller2. gold background.png" style="z-index:1" onclick="throwintomodal(this);"></img>
   
@@ -126,6 +128,8 @@
   <div style="float:left; position:relative; width:100%; height:100%;">
     <span class="closebtn" style="z-index:10">&times;</span>
     <img class="modal-content" style="width:90%" id="img01"></div>
+    <!--<a class="prev" style="position:absolute; right:1.5em; z-index:10" onclick="showSlides(slideIndex-1)">❮</a>
+    <a class="next" style="position:absolute; right:0; z-index:10" onclick="showSlides(slideIndex+1)">❯</a> -->   
     <a class="prev" style="position:absolute; right:1.5em; z-index:10" onclick="plusSlides(-1)">❮</a>
     <a class="next" style="position:absolute; right:0; z-index:10" onclick="plusSlides(1)">❯</a>
   <div id="caption"></div>
@@ -149,11 +153,30 @@ function stickyheader() {
 var modal = document.getElementById("myModal");
 var expandImg = document.getElementById("img01");
 
+
+var turnObjToArray = function(obj) {
+  return [].map.call(obj, function(element) {
+   return element;
+ })
+};
+
 function throwintomodal(imgs) {
   // var imgText = document.getElementById("imgtext");
   modal.style.display = "block";
   expandImg.src = imgs.src;
   //imgText.innerHTML = imgs.alt;
+  if (creeponoff == 1 && goofonoff == 1){
+      var slides = document.getElementsByClassName("boxpicher")
+    } else if (creeponoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.creepier")
+    } else if (goofonoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.goofier")
+    } else {
+      var slides = document.getElementsByClassName("normalpic")
+    };
+    var slidez = turnObjToArray(slides);
+    slideIndex = slidez.indexOf(imgs)+1;
+    //showSlides(slideIndex);
 }
 
 // Get the <span> element that closes the modal
@@ -165,26 +188,93 @@ closemup.onclick = function() {
 }
 
 // gallery stuff
-  var slideIndex = 1;
-  showSlides(slideIndex);
+  /*var slideIndex = function(){
+    if (creeponoff == 1 && goofonoff == 1){
+      var slides = document.getElementsByClassName("boxpicher")
+    } else if (creeponoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.creepier")
+    } else if (goofonoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.goofier")
+    } else {
+      var slides = document.querySelectorAll(".normalpic")
+    };
+    return slides.indexOf(expandImg);
+  };*/
 
   function plusSlides(n) {
     showSlides(slideIndex += n);
   }
 
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
+  document.onkeydown = function(e) { 
+    if(modal.style.display == "block"){
+      switch (e.keyCode) { 
+      case 37: 
+          plusSlides(-1);
+          break;
+      case 39: 
+          plusSlides(1);
+          break;
+      }
+    }
+  };
+
+  /*function currentSlide(img) {
+    if (creeponoff == 1 && goofonoff == 1){
+      var slides = document.getElementsByClassName("boxpicher")
+    } else if (creeponoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.creepier")
+    } else if (goofonoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.goofier")
+    } else {
+      var slides = document.querySelectorAll(".normalpic")
+    };
+    slideIndex = slides.indexOf(img);
+    showSlides(slideIndex);
+  }*/
+
+  //var showing = ".normalpic";
+  /*var showing = function(){
+      if(creeponoff == 1 && goofonoff == 1){
+        return ".boxpicher";
+      } else if (creeponoff == 1){
+        return ".normalpic,.creepier";
+      } else if (goofonoff == 1){
+        return ".normalpic,.goofier";
+      } else {
+        return ".normalpic";
+      };
+    };*/
 
   function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("boxpicher");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    //var i;
+    if (creeponoff == 1 && goofonoff == 1){
+      var slidez = document.getElementsByClassName("boxpicher")
+    } else if (creeponoff == 1){
+      var slidez = document.querySelectorAll(".normalpic,.creepier")
+    } else if (goofonoff == 1){
+      var slidez = document.querySelectorAll(".normalpic,.goofier")
+    } else {
+      var slidez = document.querySelectorAll(".normalpic")
+    };
+    /*var slides = function(){
+      if (creeponoff == 1 && goofonoff == 1){
+        return document.querySelectorAll(".boxpicher")
+      } else if (creeponoff == 1){
+        return document.querySelectorAll(".normalpic,.creepier")
+      } else if (goofonoff == 1){
+        return document.querySelectorAll(".normalpic,.goofier")
+      } else {
+        return document.querySelectorAll(".normalpic")
+      }
+    };*/
+    if (n > slidez.length) {slideIndex = 1}
+    else if (n < 1) {slideIndex = slidez.length}
+    else {slideIndex = n}
     //for (i = 0; i < slides.length; i++) {
     //    slides[i].style.display = "none";
     //}
-    expandImg.src = slides[slideIndex-1].src;
+    modal.style.display = "block";
+    expandImg.src = slidez[slideIndex-1].src;
   }
 
 function showhide(x){
