@@ -19,6 +19,11 @@
     margin: 7px;
   }
 
+  .normalpic{
+    border: 2px solid #eee;
+    border-radius: 5px;
+  }
+
   .goofier{
     border: 2px solid rgb(222, 230, 233);
     border-radius: 5px;
