@@ -195,7 +195,7 @@
         
       <img id="veezhoo" class="boxpicher notebook" src="images/doodles/notebook/я-вижу.jpg" style="z-index:1" onclick="throwintomodal(this);"></img>
 
-      <!-- creepier -->  
+    <!-- creepier -->  
       <img id="doodle" class="boxpicher creepier" src="images/doodles/determinative.png" style="z-index:1" onclick="throwintomodal(this);"></img>
         
       <img id="rk" class="boxpicher creepier" src="images/doodles/rk.png" style="z-index:1" onclick="throwintomodal(this);"></img>
@@ -265,26 +265,39 @@
       modal.style.display = "block";
       expandImg.src = imgs.src;
       //imgText.innerHTML = imgs.alt;
-      if (creeponoff == 1 && goofonoff == 1 && notesonoff == 1){
-          var slides = document.getElementsByClassName("boxpicher")
-        } else if (creeponoff == 1 && goofonoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.creepier,.goofier")
-        } else if (creeponoff == 1 && notesonoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.creepier,.notebook")
-        } else if (goofonoff == 1 && notesonoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.goofier,.notebook")
-        } else if (goofonoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.goofier")
-        } else if (creeponoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.creepier")
-        } else if (notesonoff == 1){
-          var slides = document.querySelectorAll(".normalpic,.notebook")
-        } else {
-          var slides = document.getElementsByClassName("normalpic")
-        };
-        var slidez = turnObjToArray(slides);
-        slideIndex = slidez.indexOf(imgs)+1;
-        //showSlides(slideIndex);
+      if (normonoff == 1 && creeponoff == 1 && goofonoff == 1 && notesonoff == 1){
+        var slides = document.getElementsByClassName("boxpicher")
+      } else if (normonoff == 1 && creeponoff == 1 && goofonoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.goofier,.creepier")
+      } else if (normonoff == 1 && creeponoff == 1 && notesonoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.notebook,.creepier")
+      } else if (normonoff == 1 && goofonoff == 1 && notesonoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.goofier,.notebook")
+      } else if (goofonoff == 1 && creeponoff == 1 && notesonoff == 1){
+        var slides = document.querySelectorAll(".goofier,.notebook,.creepier")
+      } else if (normonoff == 1 && goofonoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.goofier")
+      } else if (normonoff == 1 && creeponoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.creepier")
+      } else if (normonoff == 1 && notesonoff == 1){
+        var slides = document.querySelectorAll(".normalpic,.notebook")
+      } else if (goofonoff == 1 && creeponoff == 1){
+        var slides = document.querySelectorAll(".goofier,.creepier")
+      } else if (goofonoff == 1 && notesonoff == 1){
+        var slides = document.querySelectorAll(".goofier,.notebook")
+      } else if (notesonoff == 1 && creeponoff == 1){
+        var slides = document.querySelectorAll(".notebook,.creepier")
+      } else if (goofonoff == 1){
+        var slides = document.getElementsByClassName("goofier")
+      } else if (creeponoff == 1){
+        var slides = document.getElementsByClassName("creepier")
+      } else if (notesonoff == 1){
+        var slides = document.getElementsByClassName("notebook")
+      } else if (normonoff == 1){
+        var slides = document.getElementsByClassName("normalpic")
+      };
+      var slidez = turnObjToArray(slides);
+      slideIndex = slidez.indexOf(imgs)+1;
     }
 
   //Close modal
@@ -323,22 +336,35 @@
   };
 
   function showSlides(n) {
-    //var i;
-    if (creeponoff == 1 && goofonoff == 1 && notesonoff == 1){
+    if (normonoff == 1 && creeponoff == 1 && goofonoff == 1 && notesonoff == 1){
       var slides = document.getElementsByClassName("boxpicher")
-    } else if (creeponoff == 1 && goofonoff == 1){
-      var slides = document.querySelectorAll(".normalpic,.creepier,.goofier")
-    } else if (creeponoff == 1 && notesonoff == 1){
-      var slides = document.querySelectorAll(".normalpic,.creepier,.notebook")
-    } else if (goofonoff == 1 && notesonoff == 1){
+    } else if (normonoff == 1 && creeponoff == 1 && goofonoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.goofier,.creepier")
+    } else if (normonoff == 1 && creeponoff == 1 && notesonoff == 1){
+      var slides = document.querySelectorAll(".normalpic,.notebook,.creepier")
+    } else if (normonoff == 1 && goofonoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.goofier,.notebook")
-    } else if (goofonoff == 1){
+    } else if (goofonoff == 1 && creeponoff == 1 && notesonoff == 1){
+      var slides = document.querySelectorAll(".goofier,.notebook,.creepier")
+    } else if (normonoff == 1 && goofonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.goofier")
-    } else if (creeponoff == 1){
+    } else if (normonoff == 1 && creeponoff == 1){
       var slides = document.querySelectorAll(".normalpic,.creepier")
-    } else if (notesonoff == 1){
+    } else if (normonoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.notebook")
-    } else {
+    } else if (goofonoff == 1 && creeponoff == 1){
+      var slides = document.querySelectorAll(".goofier,.creepier")
+    } else if (goofonoff == 1 && notesonoff == 1){
+      var slides = document.querySelectorAll(".goofier,.notebook")
+    } else if (notesonoff == 1 && creeponoff == 1){
+      var slides = document.querySelectorAll(".notebook,.creepier")
+    } else if (goofonoff == 1){
+      var slides = document.getElementsByClassName("goofier")
+    } else if (creeponoff == 1){
+      var slides = document.getElementsByClassName("creepier")
+    } else if (notesonoff == 1){
+      var slides = document.getElementsByClassName("notebook")
+    } else if (normonoff == 1){
       var slides = document.getElementsByClassName("normalpic")
     };
     /*var slides = function(){
