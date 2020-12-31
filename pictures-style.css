@@ -22,6 +22,7 @@
   .normalpic{
     border: 2px solid #eee;
     border-radius: 5px;
+    display: none;
   }
 
   .notebook{
@@ -128,7 +129,19 @@
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* dunno */
+    padding: 0 0 0 0; /* Location of the box */
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgba(0,0,0,0.25); /* Black w/ opacity */
+  }
+  
+  .in-modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 8; /* Sit on top */
     padding: 0 0 0 0; /* Location of the box */
     bottom: 0;
     width: 100%;
@@ -138,10 +151,15 @@
     background-color: rgba(0,0,0,0.65); /* Black w/ opacity */
   }
   
+  .visible {
+    display: block;
+  }
+
   /* Modal Content (image) */
   .modal-content {
     margin: auto;
     display: block;
+    z-index: 9;
     width: 90%;
     height: 90%;
     object-fit: contain;
