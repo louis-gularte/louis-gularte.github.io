@@ -55,7 +55,7 @@
   <p>-->
     <span id="showgoofy" onclick="showhide('goofier')" style="font-size:9pt; color:rgb(108, 89, 58)">
     #goofy</span>
-    <span id="shownotes" onclick="showhide('notebook')" style="font-size:9pt; color:rgb(108, 89, 58)">
+    <span id="shownotes" onclick="showhide('notebook')" style="font-size:9pt; color:rgb(57, 88, 102)">
       #notebook</span>
     </p>
   </div>
@@ -267,7 +267,7 @@ function throwintomodal(imgs) {
       var slides = document.getElementsByClassName("boxpicher")
     } else if (creeponoff == 1 && goofonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.creepier,.goofier")
-    } else if (creeponoff == 1 && noteonoff == 1){
+    } else if (creeponoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.creepier,.notebook")
     } else if (goofonoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.goofier,.notebook")
@@ -357,7 +357,7 @@ closemup.onclick = function() {
       var slides = document.getElementsByClassName("boxpicher")
     } else if (creeponoff == 1 && goofonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.creepier,.goofier")
-    } else if (creeponoff == 1 && noteonoff == 1){
+    } else if (creeponoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.creepier,.notebook")
     } else if (goofonoff == 1 && notesonoff == 1){
       var slides = document.querySelectorAll(".normalpic,.goofier,.notebook")
@@ -381,6 +381,7 @@ closemup.onclick = function() {
         return document.querySelectorAll(".normalpic")
       }
     };*/
+    var slidez = turnObjToArray(slides);
     if (n > slidez.length) {slideIndex = 1}
     else if (n < 1) {slideIndex = slidez.length}
     else {slideIndex = n}
@@ -393,17 +394,18 @@ closemup.onclick = function() {
 
 function showhide(x){
   var setofpics=document.getElementsByClassName(x);
-  var lengthOfArray = setofpics.length;
+  var arrayofpics = turnObjToArray(setofpics);
+  var lengthOfArray = arrayofpics.length;
   if(x == 'creepier'){
     if(creeponoff == 1){
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'none';
+        arrayofpics[i].style.display = 'none';
       };
       document.getElementById("showcreepy").style.color = "rgb(49, 75, 49)";
       creeponoff = 0;
     } else {
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'inline';
+        arrayofpics[i].style.display = 'inline';
       };
       document.getElementById("showcreepy").style.color = "#9d9d9d";
       creeponoff = 1;
@@ -411,13 +413,13 @@ function showhide(x){
   } else if(x == 'goofier'){
     if(goofonoff == 1){
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'none';
+        arrayofpics[i].style.display = 'none';
       };
       document.getElementById("showgoofy").style.color = "rgb(108, 89, 58)";
       goofonoff = 0;
     } else {
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'inline';
+        arrayofpics[i].style.display = 'inline';
       };
       document.getElementById("showgoofy").style.color = "#9d9d9d";
       goofonoff = 1;
@@ -425,16 +427,16 @@ function showhide(x){
   } else if(x == 'notebook'){
     if(notesonoff == 1){
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'none';
+        arrayofpics[i].style.display = 'none';
       };
-      document.getElementById("shownotes").style.color = "rgb(216, 228, 233)";
+      document.getElementById("shownotes").style.color = "rgb(57, 88, 102)";
       notesonoff = 0;
     } else {
       for (var i=0; i<lengthOfArray; i++){
-        setofpics[i].style.display = 'inline';
+        arrayofpics[i].style.display = 'inline';
       };
       document.getElementById("shownotes").style.color = "#9d9d9d";
-      goofonoff = 1;
+      notesonoff = 1;
     };
   };
 };
