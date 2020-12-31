@@ -24,6 +24,12 @@
     border-radius: 5px;
   }
 
+  .notebook{
+    border: 2px solid rgb(216, 228, 233);
+    border-radius: 5px;
+    display: none;
+  }
+
   .goofier{
     border: 2px solid rgb(222, 230, 233);
     border-radius: 5px;
