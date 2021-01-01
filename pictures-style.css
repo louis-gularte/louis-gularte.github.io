@@ -216,11 +216,13 @@
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
+  z-index:3;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   text-align: center;
+  z-index:3;
 
   /* Position the tooltip */
   position: absolute;
