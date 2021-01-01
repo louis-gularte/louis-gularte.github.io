@@ -38,9 +38,8 @@
 
   <!--Page content before doodles-->
   <div class="content" class='center' style="z-index:-1; align-items:center;">
-    
-    <p>Here be some doodles.</p>
-    <p>
+    <p>Some of the things I like to do (other than think about suffering) include <span id="treespan" class="tooltip" onmouseover="interval()">climbing trees<span class="tooltiptext"><img id="hoverimage" src="images/upintree.jpg" style="border:5px solid rgb(73, 87, 73); border-radius:10px; max-height:35vh; width:auto;"/></span></span>, visiting large and/or pretty bodies of water, playing and listening to music (including as a member of <a href="https://www.facebook.com/MariachiDeBrown/">Mariachi de Brown</a>; I also have roughly equal reverence for J.S. Bach and Radiohead), and doodling, some of which I've collected here (try clicking a label below).</p>
+    <p class="center">
       <span id="shownormal" onclick="showhide('normalpic')" style="font-size:9pt; color:#9d9d9d">
         #normal(ish)</span> 
       <span id="showcreepy" onclick="showhide('creepier')" style="font-size:9pt; color:#9d9d9d">
@@ -389,69 +388,70 @@
     expandImg.src = slidez[slideIndex-1].src;
   }
 
-function showhide(x){
-  var setofpics=document.getElementsByClassName(x);
-  var arrayofpics = turnObjToArray(setofpics);
-  var lengthOfArray = arrayofpics.length;
-  if(x == 'creepier'){
-    if(creeponoff == 1){
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'none';
+  function showhide(x){
+    var setofpics=document.getElementsByClassName(x);
+    var arrayofpics = turnObjToArray(setofpics);
+    var lengthOfArray = arrayofpics.length;
+    if(x == 'creepier'){
+      if(creeponoff == 1){
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'none';
+        };
+        document.getElementById("showcreepy").style.color = "#9d9d9d";
+        creeponoff = 0;
+      } else {
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'inline';
+        };
+        document.getElementById("showcreepy").style.color = "rgb(49, 75, 49)";
+        creeponoff = 1;
       };
-      document.getElementById("showcreepy").style.color = "#9d9d9d";
-      creeponoff = 0;
-    } else {
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'inline';
+    } else if(x == 'goofier'){
+      if(goofonoff == 1){
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'none';
+        };
+        document.getElementById("showgoofy").style.color = "#9d9d9d";
+        goofonoff = 0;
+      } else {
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'inline';
+        };
+        document.getElementById("showgoofy").style.color = "rgb(108, 89, 58)";
+        goofonoff = 1;
+      };   
+    } else if(x == 'notebook'){
+      if(notesonoff == 1){
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'none';
+        };
+        document.getElementById("shownotes").style.color = "#9d9d9d";
+        notesonoff = 0;
+      } else {
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'inline';
+        };
+        document.getElementById("shownotes").style.color = "rgb(57, 88, 102)";
+        notesonoff = 1;
       };
-      document.getElementById("showcreepy").style.color = "rgb(49, 75, 49)";
-      creeponoff = 1;
-    };
-  } else if(x == 'goofier'){
-    if(goofonoff == 1){
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'none';
+    } else if(x == 'normalpic'){
+      if(normonoff == 1){
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'none';
+        };
+        document.getElementById("shownormal").style.color = "#9d9d9d";
+        normonoff = 0;
+      } else {
+        for (var i=0; i<lengthOfArray; i++){
+          arrayofpics[i].style.display = 'inline';
+        };
+        document.getElementById("shownormal").style.color = "rgb(92, 77, 51)";
+        normonoff = 1;
       };
-      document.getElementById("showgoofy").style.color = "#9d9d9d";
-      goofonoff = 0;
-    } else {
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'inline';
-      };
-      document.getElementById("showgoofy").style.color = "rgb(108, 89, 58)";
-      goofonoff = 1;
-    };   
-  } else if(x == 'notebook'){
-    if(notesonoff == 1){
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'none';
-      };
-      document.getElementById("shownotes").style.color = "#9d9d9d";
-      notesonoff = 0;
-    } else {
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'inline';
-      };
-      document.getElementById("shownotes").style.color = "rgb(57, 88, 102)";
-      notesonoff = 1;
-    };
-  } else if(x == 'normalpic'){
-    if(normonoff == 1){
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'none';
-      };
-      document.getElementById("shownormal").style.color = "#9d9d9d";
-      normonoff = 0;
-    } else {
-      for (var i=0; i<lengthOfArray; i++){
-        arrayofpics[i].style.display = 'inline';
-      };
-      document.getElementById("shownormal").style.color = "rgb(92, 77, 51)";
-      normonoff = 1;
     };
   };
-};
 
+//hoverover tree-climbing
 </script>
 
 </body>
