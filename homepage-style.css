@@ -115,3 +115,56 @@ body {
       color: black;
       font-weight: bold;
     }
+
+    hr {
+      width:6em;
+      height:3px;
+      border:none; 
+      background-color: rgb(232, 232, 232); 
+      display: inline-block;
+      text-align: center;
+      margin-bottom: .25em;
+    }
+
+    .tog-claps {
+      float: left;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      align-items: center;
+      font-size: 18pt;
+      font-weight: 900;
+      color:rgb(119, 134, 119);
+      text-shadow: 0px 0px 2px rgb(57, 57, 57);
+      transition: transform .15s, max-height 1s;
+      position: relative;
+      left: -.5em;
+      margin-right: -.5em;
+      bottom: calc(1em / 3);
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .tog-claps:before {
+      content: "›";
+    }
+
+    .bebe {
+      max-height:0; 
+      overflow:hidden; 
+      transition: transform .15s, max-height .2s;
+    }
+
+    .tog-claps:hover:not(.rotated-tog-claps) {
+      text-shadow: 0px 0px 4px rgb(42, 70, 63);
+    }
+    
+    .rotated-tog-claps {
+        transform: rotate(90deg);
+        text-shadow: 0px 0px 0px rgb(57, 57, 57);
+    }
