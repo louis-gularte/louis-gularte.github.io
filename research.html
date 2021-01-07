@@ -38,19 +38,53 @@
   <p>My account of suffering: </p>
 </div>
 
+<div class="content center">
+  <div class="tog-claps"></div>
+  <div style="float:left; display:block; height:calc(1.5 * 18pt)">
+    Oh wow let's uh, sure.
+    <div class="bebe" style="width:100%">
+      <div class="tog-claps"></div>
+      <div style="width:500px">I'm a child!
+        <div class="bebe">I'm a grandchild!</div>
+      </div>
+      </div>
+  </div>
+</div>
+
 <script>
-window.onscroll = function() {myFunction()};
+  //collapsibles
+    var coll = document.getElementsByClassName("tog-claps");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("rotated-tog-claps");
+        var content = this.nextElementSibling.children[0];
+        /* if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        } */
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = 2 * content.scrollHeight + "px";
+        }
+      });
+    }
 
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
+  //sticky header stuff
+    window.onscroll = function() {myFunction()};
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
 </script>
 
 </body>
