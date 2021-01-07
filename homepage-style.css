@@ -135,7 +135,7 @@ body {
       font-size: 18pt;
       font-weight: 900;
       color:rgb(119, 134, 119);
-      text-shadow: 0px 0px 2px rgb(57, 57, 57);
+      text-shadow: 0px 0px rgb(57, 57, 57);
       transition: transform .15s, max-height 1s;
       position: relative;
       left: -.5em;
@@ -161,10 +161,21 @@ body {
     }
 
     .tog-claps:hover:not(.rotated-tog-claps) {
-      text-shadow: 0px 0px 4px rgb(42, 70, 63);
+      color: rgb(102, 192, 170);
+      /*border-radius: 50%;
+      border: 1px solid rgb(42, 70, 63);
+      text-shadow: 0px 0px 4px rgb(42, 70, 63);*/
     }
     
+    .rotated-tog-claps:hover {
+      color: rgb(119, 134, 119);
+      /*border-radius: 50%;
+      border: 1px solid rgb(42, 70, 63);
+      text-shadow: 0px 0px 4px rgb(42, 70, 63);*/
+    }
+
     .rotated-tog-claps {
         transform: rotate(90deg);
+        color: rgb(102, 192, 170);
         text-shadow: 0px 0px 0px rgb(57, 57, 57);
     }
