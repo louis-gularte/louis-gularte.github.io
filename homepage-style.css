@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Spectral';
+    overflow-x: hidden;
   }
   
   a {
@@ -92,7 +93,7 @@ body {
     }*/
   
     li a.navvbar {
-      display: block;
+      display: inline-block;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -117,7 +118,6 @@ body {
     }
 
     hr {
-      width:6em;
       height:3px;
       border:none; 
       background-color: rgb(232, 232, 232); 
@@ -155,27 +155,43 @@ body {
     }
 
     .bebe {
+      width:calc(100% - 1.5em);
+      float:left;
+      text-align:left;
+      transition: max-height .2s;
+    }
+
+    .ganz {
       max-height:0; 
+      width:100%;
       overflow:hidden; 
-      transition: transform .15s, max-height .2s;
+      transition: max-height .2s;
     }
 
     .tog-claps:hover:not(.rotated-tog-claps) {
-      color: rgb(102, 192, 170);
-      /*border-radius: 50%;
+      text-shadow: 0px 0px 7px rgb(102, 192, 170);
+      /*color: rgb(102, 192, 170);
+      border-radius: 50%;
       border: 1px solid rgb(42, 70, 63);
       text-shadow: 0px 0px 4px rgb(42, 70, 63);*/
     }
     
-    .rotated-tog-claps:hover {
-      color: rgb(119, 134, 119);
-      /*border-radius: 50%;
-      border: 1px solid rgb(42, 70, 63);
-      text-shadow: 0px 0px 4px rgb(42, 70, 63);*/
+    .rotated-tog-claps:hover:not(.nobabies) {
+      /*color: rgb(119, 134, 119);
+      border-radius: 50%;
+      border: 1px solid rgb(42, 70, 63);*/
+      text-shadow: 0px 0px 4px rgb(42, 70, 63);
+      /*text-shadow: 0px 0px 7px rgb(102, 192, 170);*/
     }
 
     .rotated-tog-claps {
         transform: rotate(90deg);
-        color: rgb(102, 192, 170);
+        color: rgb(237, 245, 243);
         text-shadow: 0px 0px 0px rgb(57, 57, 57);
+    }
+
+    .nobabies {
+      color:white;
+      text-shadow:none;
+      cursor:auto;
     }
