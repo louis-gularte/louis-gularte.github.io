@@ -8,3 +8,32 @@
       </div>
     </div>
   </div>
+
+
+  //stuff from https://bit.ly/3bBGR41
+  var animationDelay = 201; /* to delay max-height value */
+  function calcMaxHeight(thisnsClapser) {
+    var nextItem = thisnsClapser.nextElementSibling.children[0];
+    var kidContent = nextItem.children[1];
+    if (thisnsClapser.classList.contains("rotated-tog-claps")){
+      nextItem.style.maxHeight = kidContent.scrollHeight + "px";
+    } else {
+      nextItem.style.maxHeight = "0";
+    };
+    var prevParentBebe = thisnsClapser.closest(".bebe");
+    if (prevParentBebe !== null) {
+      var prevParentClapser = prevParentBebe.previousElementSibling;
+      setTimeout(function() {
+        calcMaxHeight(prevParentClapser);
+      }, animationDelay);
+  };
+};
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    var baby = this.nextElementSibling.children[0];
+    if (baby.classList.contains("ganz")){
+      this.classList.toggle("rotated-tog-claps");
+      calcMaxHeight(this);}
+});
+}
