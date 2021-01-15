@@ -37,3 +37,58 @@ for (i = 0; i < coll.length; i++) {
       calcMaxHeight(this);}
 });
 }
+
+<script>
+  //collapsibles
+    var coll = document.getElementsByClassName("tog-claps");
+    //stuff from https://bit.ly/3bBGR41
+      var animationDelay = 101; /* to delay max-height value */
+      function calcMaxHeight(thisnsClapser) {
+        var nextItems = thisnsClapser.nextElementSibling.children;
+        if (thisnsClapser.classList.contains("rotated-tog-claps")){
+          for (var i=0; i < nextItems.length; i++) {
+            var kidContent = nextItems[i].children[1];
+            nextItems[i].style.maxHeight = kidContent.scrollHeight + "px";
+          }
+        } else {
+            for (var i=0; i < nextItems.length; i++) {
+              nextItems[i].style.maxHeight = "0";
+            }
+        };
+        var prevParentBebe = thisnsClapser.closest(".bebe");
+        if (prevParentBebe !== null) {
+          var prevParentClapser = prevParentBebe.previousElementSibling;
+          setTimeout(function() {
+            calcMaxHeight(prevParentClapser);
+          }, animationDelay);
+      };
+    };
+    for (var i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        var allbabies = this.nextElementSibling.children;
+        var nonietos = 1;
+        for (var j=0; j < allbabies.length; j++){
+          if (allbabies[j].classList.contains("ganz")){
+            nonietos = 0;
+          }
+        }
+        if (nonietos == 0){
+          this.classList.toggle("rotated-tog-claps");
+          calcMaxHeight(this);}
+    });
+  }
+
+  //sticky header stuff
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+</script>
