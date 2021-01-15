@@ -48,8 +48,8 @@ body {
   
   .content {
     margin: auto;
-    max-width: 700px;
-    min-width: 45%;
+    width: 700px;
+    max-width: calc(100vw - 6em);
     padding: 16px;
     /*justify-content:center;*/
   }
@@ -136,7 +136,7 @@ body {
       font-weight: 900;
       color:rgb(119, 134, 119);
       text-shadow: 0px 0px rgb(57, 57, 57);
-      transition: transform .15s, max-height 1s;
+      transition: transform .15s;
       position: relative;
       left: -.5em;
       margin-right: -.5em;
@@ -158,14 +158,19 @@ body {
       width:calc(100% - 1.5em);
       float:left;
       text-align:left;
-      transition: max-height .2s;
+      /*transition: max-height .15s;*/
     }
 
     .ganz {
       max-height:0; 
       width:100%;
       overflow:hidden; 
-      transition: max-height .2s;
+      transition: max-height .1s;
+      clear:both;
+    }
+
+    .expanded {
+      transition: max-height .01s;
     }
 
     .tog-claps:hover:not(.rotated-tog-claps) {
@@ -194,4 +199,18 @@ body {
       color:white;
       text-shadow:none;
       cursor:auto;
+    }
+
+    .bottom-name-tag {
+      position:fixed; 
+      bottom:0; 
+      left:0; 
+      padding:.5em .75em; 
+      font-family:'Spectral SC'; 
+      font-size:8pt; 
+      display:inline-block; 
+      text-align:left; 
+      background-color:white; 
+      box-shadow:0px 0px 5px 10px #f7f7f7; 
+      font-weight:900;
     }
