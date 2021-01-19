@@ -44,6 +44,7 @@ body {
     text-align: center;
     vertical-align: middle;
     box-shadow: 0px 5px 5px #f7f7f7;
+    z-index: 5;
   }
   
   .content {
@@ -51,6 +52,7 @@ body {
     width: 700px;
     max-width: calc(100vw - 6em);
     padding: 16px;
+    z-index:-1;
     /*justify-content:center;*/
   }
   
@@ -155,18 +157,22 @@ body {
     }
 
     .bebe {
-      width:calc(100% - 1.5em);
+      max-width:calc(100% - 1.5em);
       float:left;
       text-align:left;
+      text-shadow: 0px 0px 4px white;
+      /*clip-path: polygon(0 0, calc(100% - 8em) 0, calc(100% - 8em) 8em, 100% 8em, 100% 100%, 0 100%);
+      shape-outside: polygon(0 0, calc(100% - 8em) 0, calc(100% - 8em) 8em, 100% 8em, 100% 100%, 0 100%);*/
       /*transition: max-height .15s;*/
     }
 
     .ganz {
+      position:relative;
+      top:0;
       max-height:0; 
       width:100%;
       overflow:hidden; 
       transition: max-height .1s;
-      clear:both;
     }
 
     .expanded {
@@ -198,7 +204,8 @@ body {
     .nobabies {
       color:white;
       text-shadow:none;
-      cursor:auto;
+      cursor:arrow;
+      z-index:-2;
     }
 
     .bottom-name-tag {
@@ -211,6 +218,41 @@ body {
       display:inline-block; 
       text-align:left; 
       background-color:white; 
-      box-shadow:0px 0px 5px 10px #f7f7f7; 
+      box-shadow:0px 0px 5px 10px white; 
       font-weight:900;
+    }
+
+    .paperpic {
+      width:4.5em;
+      height:auto;
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .5s;
+      transition: height .5s;
+      transition: width .5s;
+      transition: opacity .5s;
+      transition: position .5s;
+    }
+
+    .fadeybiggerpic {
+      opacity:.3;
+      /*width: 10em;
+      height: 10em;*/
+    }
+    
+    .paperpicdiv {
+      height:5em;
+      width:5em;
+      float:right;
+      position:relative;
+      top:-2em;
+      /*clip-path:circle();
+      shape-outside:circle();*/
+      transition: max-height .1s;
+      margin-bottom:-100%;
+    }
+
+    .biggerpicdiv {
+      width: 5em;
+      height: auto;
     }
