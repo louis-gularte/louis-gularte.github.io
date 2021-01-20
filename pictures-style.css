@@ -132,7 +132,7 @@
     z-index: 2; /* dunno */
     padding: 0 0 0 0; /* Location of the box */
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: auto; /* Enable scroll if needed */
     /*background-color: rgba(0,0,0,0.25); /* Black w/ opacity */
@@ -170,7 +170,7 @@
   }
   
   /* Caption of Modal Image */
-  #caption {
+  /*#caption {
     margin: auto;
     display: block;
     width: 80%;
@@ -178,7 +178,7 @@
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-  }
+  }*/
   
   /* Add Animation 
   .modal-content, #caption {  
