@@ -24,7 +24,7 @@ body {
     font-family: 'Spectral SC';
     /*background-image: url("https://media.giphy.com/media/3oEjI2GUZ3RffMInja/giphy.gif");*/
     background-color: #F3FAFE; /* Used if the image is unavailable */
-    height: 120px; /* You must set a specified height */
+    height: 150px; /* You must set a specified height */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
