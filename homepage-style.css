@@ -152,6 +152,7 @@ body {
       -ms-user-select: none;
       user-select: none;
       z-index:2;
+      overflow:visible;
     }
 
     .tog-claps:before {
@@ -163,6 +164,7 @@ body {
       float:left;
       text-align:left;
       text-shadow: 0px 0px 4px white;
+      overflow:visible;
       /*clip-path: polygon(0 0, calc(100% - 8em) 0, calc(100% - 8em) 8em, 100% 8em, 100% 100%, 0 100%);
       shape-outside: polygon(0 0, calc(100% - 8em) 0, calc(100% - 8em) 8em, 100% 8em, 100% 100%, 0 100%);*/
       /*transition: max-height .15s;*/
@@ -175,6 +177,12 @@ body {
       width:100%;
       overflow:hidden; 
       transition: max-height .1s;
+    }
+
+    .bypic {
+      width:calc(100% - 6em);
+      top:1em;
+      float:right;
     }
 
     .expanded {
@@ -228,12 +236,13 @@ body {
       width:4.5em;
       height:auto;
       max-height:0;
-      overflow:hidden;
+      overflow:visible;
       transition: max-height .5s;
       transition: height .5s;
       transition: width .5s;
       transition: opacity .5s;
       transition: position .5s;
+      z-index:2;
     }
 
     .fadeybiggerpic {
@@ -252,6 +261,7 @@ body {
       shape-outside:circle();*/
       transition: max-height .1s;
       margin-bottom:-100%;
+      overflow:visible;
     }
 
     .biggerpicdiv {
