@@ -237,16 +237,22 @@ body {
       height:auto;
       max-height:0;
       overflow:visible;
+      transition: opacity 1s;
       transition: max-height .5s;
       transition: height .5s;
       transition: width .5s;
-      transition: opacity .5s;
       transition: position .5s;
       z-index:2;
     }
 
+    .unfadeypic {
+      opacity:1;
+      transition: opacity 1s;
+    }
+
     .fadeybiggerpic {
       opacity:.3;
+      transition: opacity 1s;
       /*width: 10em;
       height: 10em;*/
     }
