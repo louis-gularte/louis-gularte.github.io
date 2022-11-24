@@ -88,6 +88,13 @@ body {
     padding-top: 90px;
   }
 
+  .sticky_profile {
+    position: fixed;
+    top: 90px;
+  }
+
+  #nav {}
+
   .vl{
     border-left: 3px solid rgb(180, 201, 180);
   }

@@ -7,6 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Spectral SC' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
 <link href='homepage-style.css' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body id="body" style="min-height:101vh">
@@ -34,7 +35,7 @@
 <!--Main content-->
   <div class="content" class='center'>
 
-    <div id="profile" style="float:right; position:relative; left:calc(20% - 20px); margin-left:calc(40px - 20%); width:20%; display:flex; align-items:top;">
+    <nav id="profile" style="float:right; position:relative; left:calc(20% - 20px); margin-left:calc(40px - 20%); width:20%; display:flex; align-items:top;">
       <div class="vl" style="z-index:-1; float:left; min-height:53vh; margin-right:20px; margin-bottom:20px;"></div>
       <div>
         <img src="images/AAZT-portrait-circle.png" style="z-index:-1; float:left; position:relative; margin-bottom:20px; margin-top:5vh; max-width:calc(100% - 23px); height: auto;"></img>
@@ -45,7 +46,7 @@
           <p style="text-indent:-2ch; margin-left:2ch"><span style="font-weight:900; color:rgb(119, 134, 119); font-family:'Spectral SC'">Brown-related:</span><br>substitute "brown.edu"</p>
         </div>
       </div>
-    </div>
+    </nav>
 
   <!--Overview/description-->
   <div style="float:left; width:calc(100% - 40px); position:relative; top:2vh; font-size:12pt; z-index:2">
@@ -65,7 +66,7 @@
           </div>
           <i>Negative affect and the puzzle of fun desire-frustration</i>
         </summary>
-          <p>This paper defends my view of affective valence in detail by laying out its advantages over the going alternatives. The main advantages are (i) its compatibility with the findings and guiding assumptions of active researchers in affective and decision neuroscience, (ii) its relative simplicity, and especially (iii) its ability to handle the puzzle in the title: the puzzle of 'fun desire-frustration.'</p>
+          <p>This paper defends my view of affective valence in detail, primarily by laying out its advantages over the going alternatives. The main advantages are (i) its compatibility with the findings and guiding assumptions of active researchers in affective and decision neuroscience, (ii) its relative simplicity, and especially (iii) its ability to handle the puzzle in the title: the puzzle of 'fun desire-frustration.'</p>
           <details>
             <summary style="color:rgb(96, 96, 96)"><i>Expand for more details</i></summary>
               <p>The puzzle is a problem for all theories of affective valence that try to cash out the experiential difference between positive and negative affect as the difference between satisfied and frustrated desires or desires that something be or not be the case. I give a series of examples — <i>enjoying a challenge</i>, for instance — that show, against those proposals, that we don't always feel to any degree negative about having our desires frustrated or in virtue of desiring that something not be the case. I propose instead that we distinguish positive and negative affect not in terms of their intentional objects but in terms of their 'attentional mode,' specifically as constituted by the way they motivate us with respect to their intentional objects: we feel negatively or positively towards something if we're motivated (roughly) <i>against</i> or <i>towards</i> it, respectively — where those are ultimately to be understood in terms of their role in the reward and punishment system familiar from the reinforcement learning and decision-making literature.</p>
@@ -169,8 +170,10 @@
     function myFunction() {
       if (window.pageYOffset > sticky_h) {
         header.classList.add("sticky");
+        //profile.classList.add("sticky_profile");
       } else {
         header.classList.remove("sticky");
+        //profile.classList.remove("sticky_profile");
       }
     }
 </script>
