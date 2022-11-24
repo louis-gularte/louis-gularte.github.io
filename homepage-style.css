@@ -90,7 +90,9 @@ body {
   .sticky + .content {
     padding-top: 90px;
   }
-
+  .sticky + .container {
+    padding-top: 90px;
+  }
   .vl{
     border-left: 3px solid rgb(180, 201, 180);
   }

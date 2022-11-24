@@ -35,8 +35,8 @@
 <!--Main content-->
   <div class="container" class='center'>
 
-    <div style="float:right; position:relative; left:20px; margin-left:20px; max-width:25%; display:flex; align-items:top;">
-      <div class="vl" style="z-index:-1; float:left; min-height:calc(25vw + 180px); margin-right:20px; margin-left:20px; margin-bottom:20px;"></div>
+    <div style="float:right; position:relative; left:20px; margin-left:.25em; max-width:25%; display:flex; align-items:top;">
+      <div class="vl" style="z-index:-1; float:left; min-height:calc(25vw + 180px); margin-right:20px; margin-left:1em; margin-bottom:20px;"></div>
       <div>
         <div style=width:100%><img src="images/AAZT-portrait-circle.png" style="z-index:-1; float:left; position:relative; margin-bottom:20px; margin-top:5vh; max-width:calc(75%); height: auto;"></img></div>
 
@@ -161,19 +161,18 @@
   </div>
 
 <script>
-  //sticky header stuff
-  window.onscroll = function() {myFunction()};
+window.onscroll = function() {myFunction()};
 
-  var header = document.getElementById("myHeader");
-  var sticky = header.offsetTop;
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
 
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
-    }
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
   }
+}
 </script>
 
 </body>
