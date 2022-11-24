@@ -37,6 +37,7 @@ body {
   }
 
   .top-container {
+    width:100vw;
     font-family: 'Spectral SC';
     /*background-image: url("https://media.giphy.com/media/3oEjI2GUZ3RffMInja/giphy.gif");*/
     background-color: #F3FAFE; /* Used if the image is unavailable */
@@ -52,11 +53,11 @@ body {
 
   .header {
     height: 50px;
-    width:100%;
+    width:100vw;
     font-family: 'Spectral SC';
     padding: 6px 0px; /*top/bottom right/left*/
     /*background-image: linear-gradient(white, #fefefe);*/
-    background-color: white;
+    background-color: rgba(255, 255, 255, .97);;
     color: black;
     text-align: center;
     vertical-align: middle;
@@ -66,8 +67,8 @@ body {
 
   .content {
     margin: auto;
-    width: 800px;
-    max-width: calc(100vw - 6em);
+    width: calc(100vw - 6em);
+    max-width: 900px;
     padding: 16px;
     z-index:-1;
     /*justify-content:center;*/
@@ -87,13 +88,6 @@ body {
   .sticky + .content {
     padding-top: 90px;
   }
-
-  .sticky_profile {
-    position: fixed;
-    top: 90px;
-  }
-
-  #nav {}
 
   .vl{
     border-left: 3px solid rgb(180, 201, 180);
@@ -407,8 +401,12 @@ body {
     }
 
     details[open] > summary > .paperpicdiv {
-      height:5.5em;
       width:5.5em;
+      height:5.5em;
+      min-width:3em;
+      min-height:3em;
+      max-width:5.5em;
+      max-height:5.5em;
       border-radius:2.75em;
       float:left;
       position:relative;

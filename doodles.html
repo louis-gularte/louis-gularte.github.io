@@ -247,18 +247,18 @@
 
 <script>
   //stickyheader
-    window.onscroll = function() {stickyheader()};
+  window.onscroll = function() {myFunction()};
 
-    var header = document.getElementById("myHeader");
-    var sticky = header.offsetTop;
+  var header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
 
-    function stickyheader() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
     }
+  }
 
   // Open the modal and put the clicked image in
     var modal = document.getElementById("myModal");
