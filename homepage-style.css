@@ -8,6 +8,8 @@ body {
   a {
     color:rgb(119, 134, 119);
     text-decoration: none;
+    target-name:new;
+    target-new:tab;
   }
 
   ul:not(.navbar) {
