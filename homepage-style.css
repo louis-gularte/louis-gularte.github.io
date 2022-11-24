@@ -70,7 +70,16 @@ body {
   .content {
     margin: auto;
     width: calc(100vw - 6em);
-    max-width: 900px;
+    max-width: 1000px;
+    padding: 16px;
+    z-index:-1;
+    /*justify-content:center;*/
+  }
+
+  .container {
+    margin: auto;
+    /*width: calc(100vw - 6em);
+    /*max-width: 900px;*/
     padding: 16px;
     z-index:-1;
     /*justify-content:center;*/
