@@ -8,6 +8,20 @@
 <link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
 <link href='homepage-style.css' rel='stylesheet'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>    
+  var images = [];
+  function preload() {
+  for (var i = 0; i < arguments.length; i++) {
+      images[i] = new Image();
+      images[i].src = preload.arguments[i];
+  }
+  }
+  preload(
+      "/images/doodles/notebook/circle_hammer-horn.png",
+      "/images/doodles/notebook/circle_nelse.png",
+      "/images/doodles/notebook/circle_relaxing-eye.png",
+      "images/doodles/notebook/circle_страдание.png"
+  )</script>
 </head>
 
 <body id="body" style="min-height:101vh; width:100vw">
