@@ -143,6 +143,18 @@
         border-radius: 50%;
         background: #606060;
         }
+      .podbar {
+        bottom:0;
+        left:1em;
+        font-variant: small-caps;
+        color:#ffffff20;
+        position:fixed;
+        z-index:150;
+        _position:absolute;
+        _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        height:35px;
+      }
       </style>
     <audio id="bell">
       <source src="/bell-stuff/40-second-zen-bell-B.mp3" type="audio/mpeg">
@@ -192,5 +204,10 @@
           document.getElementById("volumebar").oninput = function() {displayvol()};
           </script>
       <br>
+        </div>
+        </div>
+      <div class="podbar">
+        <a href="index.html" style="color:#77ffee50;">home</a>
+      </div>
     </body>
     </html>
