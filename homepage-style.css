@@ -39,7 +39,7 @@ body {
   }
 
   .top-container {
-    width:100vw;
+    width:100%;
     font-family: 'Spectral SC';
     /*background-image: url("https://media.giphy.com/media/3oEjI2GUZ3RffMInja/giphy.gif");*/
     background-color: #F3FAFE; /* Used if the image is unavailable */
@@ -47,7 +47,7 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    padding: 1%;
+    padding: 0%;
     padding-top:30px;
     text-align: center;
     vertical-align: middle;
@@ -55,7 +55,7 @@ body {
 
   .header {
     height: 50px;
-    width:100vw;
+    width:100%;
     font-family: 'Spectral SC';
     padding: 6px 0px; /*top/bottom right/left*/
     /*background-image: linear-gradient(white, #fefefe);*/
@@ -69,7 +69,7 @@ body {
 
   .content {
     margin: auto;
-    width: calc(100vw - 6em);
+    width: auto;/*calc(100vw - 6em);*/
     max-width: 1000px;
     padding: 16px;
     z-index:-1;
@@ -82,6 +82,7 @@ body {
     /*max-width: 900px;*/
     padding: 16px;
     z-index:-1;
+    overflow: hidden;
     /*justify-content:center;*/
   }
 
@@ -135,7 +136,7 @@ body {
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-
+      font-size:1rem;
     }
 
     li a.navvbar:not(.active) {
