@@ -3,6 +3,7 @@ body {
     font-family: 'Spectral';
     overflow-x: hidden;
     line-height: normal;
+    box-sizing: border-box;
   }
 
   a {
@@ -416,17 +417,14 @@ body {
     }
 
     details[open] > summary > .paperpicdiv {
-      width:5.5em;
-      height:5.5em;
-      min-width:3em;
-      min-height:3em;
-      max-width:5.5em;
-      max-height:5.5em;
-      border-radius:2.75em;
+      height:4em;
+      width:4em;
+      border-radius:2em;
       float:left;
       position:relative;
-      top:2em;
-      left:-7.125em;
+      top:0em;
+      left:-5em;
+      transition: .15s;
     }
     details[open] > summary > .paperpicdiv:hover {
       -webkit-box-shadow: 0 0 3px 3px rgba(102,192,170, .25);

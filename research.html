@@ -47,122 +47,115 @@
   </div>
 
 <!--Main content-->
-  <div class="container" class='center' style="max-width:100%">
-
-    <div style="float:right; position:relative; max-width:25%; display:flex; align-items:top;">
-      <div class="vl" style="max-width:5%; z-index:-1; float:left; min-height:calc(25vh + 180px); margin-right:.5em; margin-left:2em; margin-bottom:20px;"></div>
-      <div style="max-width:95%;">
-        <div style="max-width:70%; float:left;"><img src="images/AAZT-portrait-circle.png" style="z-index:-1; float:left; position:relative; margin-bottom:20px; margin-top:5vh; max-width:calc(100%); height: auto;"></img>
+  <div class="container" class='center' style="max-width:900px;">
+    <!--picture and contact-->
+      <div id="floating-me" style="float:right; max-width:calc(25% - 0em); min-width:7em; margin:0em;">
+        <div class="vl" style="z-index:1; min-height:calc(25vh + 180px); margin-left:3em; float:left; padding-left:.4em; padding-right:.4em; margin-bottom:1em;">
         </div>
-        <div style="max-width:70%; font-size:.7em; clear:both; float:left;">
-          <p style="font-weight:900; font-family:Spectral SC; color:rgb(119, 134, 119); margin-bottom:-9pt;">Contact:</p>
-          <p>lgularte&nbsp;<span style="color:rgb(119, 134, 119); font-size:8pt">[preposition]</span> tulane.edu</p>
-          <p><span style="font-weight:900; color:rgb(119, 134, 119); font-family:'Spectral SC'">Brown-related:</span><br>substitute "brown.edu"</p>
+        <div id="pic-of-me-div" style="width:95%">
+          <img src="images/AAZT-portrait-circle.png" style="z-index:-1; float:right; margin-bottom:10px; margin-top:5vh; max-width:calc(80% - 3em); height: auto;"></img>
         </div>
+          <p style="font-size:calc(.1em + 1.5vw); font-weight:900; font-family:Spectral SC; color:rgb(119, 134, 119); margin-bottom:-.5em;">Contact:</p>
+          <p style="font-size:calc(.1em + 1.3vw);">lgularte <span style="color:rgb(119, 134, 119); font-size:calc(.1em + 1.2vw);">[preposition]</span> tulane.edu</p>
+          <p style="font-size:calc(.1em + 1.3vw);"><span style="font-weight:900; color:rgb(119, 134, 119); font-family:'Spectral SC'">Brown-related:</span><br>substitute "brown.edu"</p>
       </div>
-    </div>
-
-  <div style="position:relative; top:2vh; font-size:12pt; z-index:2; margin:auto;" class="content">
-  <!--Overview/description-->
-  <div id="intro" style="align-items:right; max-width:75%">
-      <p>Much of my philosophical work is focused on negative emotion(s) and <i>suffering</i> in particular – including what it is, why it matters (if it does), what to do about it, and even what role it plays in our sense of being an agent or having a <i>self</i>.</p>
-      <p>My cognitive science MSc thesis (which I'm currently finishing up in Michael Frank's <a href="https://www.lnccbrown.com/">Laboratory for Neural Computation and Cognition</a>) explores the relationship between negative and positive emotion ('affective valence') and the so-called reward and punishment system, best known for its role in reinforcement learning.</p>
-    </div>
-
-<!--Papers in prep-->
-  <div class="content" style="padding-left:60px;">
-    <details id="in-prep" open>
-      <summary style="font-size:1.125em; font-weight:900; padding-top:1em; padding-bottom:0em; margin-left:-3.5em">Papers in preparation</summary>
-
-      <details id="fun-frustration" class="papertitle" open>
-        <summary style="font-weight:900">
-          <div id="fun-frustration_picdiv" class="paperpicdiv">
-            <img id="fun-frustration_pic" src="images/doodles/notebook/circle_hammer-horn.png" class="paperpic"/>
-          </div>
-          <i>Negative affect and the puzzle of fun desire-frustration</i>
-        </summary>
-          <p>This paper defends my view of affective valence in detail, primarily by laying out its advantages over the going alternatives. The main advantages are (i) its compatibility with the findings and guiding assumptions of active researchers in affective and decision neuroscience, (ii) its relative simplicity, and especially (iii) its ability to handle the puzzle in the title: the puzzle of 'fun desire-frustration.'</p>
-          <details>
-            <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
-              <p>The puzzle is a problem for all theories of affective valence that try to cash out the experiential difference between positive and negative affect as the difference between satisfied and frustrated desires or desires that something be or not be the case. I give a series of examples — <i>enjoying a challenge</i>, for instance — that show, against those proposals, that we don't always feel to any degree negative about having our desires frustrated or in virtue of desiring that something not be the case. I propose instead that we distinguish positive and negative affect not in terms of their intentional objects but in terms of their 'attentional mode,' specifically as constituted by the way they motivate us with respect to their intentional objects: we feel negatively or positively towards something if we're motivated (roughly) <i>against</i> or <i>towards</i> it, respectively — where those are ultimately to be understood in terms of their role in the reward and punishment system familiar from the reinforcement learning and decision-making literature.</p>
-            </details>
-        </details>
-      <details id="ku-to-chuui" class="papertitle" open>
-        <summary style="font-weight:900">
-          <div id="ku-to-chuui_picdiv" class="paperpicdiv">
-            <img id="ku-to-chuui_pic" src="images/doodles/notebook/circle_relaxing-eye.png" class="paperpic"/>
-          </div>
-          <i>Suffering and attention</i>
-        </summary>
-          <p>This paper gives a motivation- and attention-centered account of negative affect and an account of suffering as <i>attention-controlling</i> negative affect, and then uses those two accounts to explain a puzzling set of cases: cases in which allowing ourselves to suffer <i>more thoroughly</i> radically transforms our suffering in a way that makes us experience it as 'bearable' – or even beautiful. The three cases I consider are (i) 'acceptance-stage' grief, (ii) aesthetic experiences that are deeply moving even though (and because) they make us feel extreme sadness or even despair, and (iii) experiences accompanying meditation practices that involve focused attention on our own suffering.</p>
-          <!--<ul style="margin-top:.25em">
-            <li>'acceptance-stage' grief,</li>
-            <li>aesthetic experiences that are deeply moving even though (and because) they make us feel extreme sadness or even despair, and</li>
-            <li>experiences accompanying meditation practices that involve focused attention on our suffering.</li>
-          </ul>-->
-          <details>
-            <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
+    <!--overview-->
+      <p style="padding-left:1.1em; margin-right:-3em">Much of my philosophical work is focused on negative emotion(s) and <i>suffering</i> in particular — including what it is, why it matters (if it does), what to do about it, and even what role it plays in our sense of being an agent or having a <i>self</i>.</p>
+      <p style="padding-left:1.1em">My cognitive science MSc thesis (which I'm currently finishing up in Michael Frank's <a href="https://www.lnccbrown.com/">Laboratory for Neural Computation and Cognition</a>) explores the relationship between negative and positive emotion ('affective valence') and the so-called reward and punishment system, best known for its role in reinforcement learning.</p>
+    <!--Papers in prep-->
+      <details id="pubbed" style="font-size:1em; margin-left:5em; margin-top:3em; clear:top" open>
+        <summary style="font-size:1.125em; font-weight:900; padding-bottom:0em; margin-left:-3.5em;"><b>Publications</b></summary>
+        <details id="suffering-bad" class = "papertitle" open>
+          <summary style="font-weight:900">
+            <div id="suffering-bad_picdiv" class="paperpicdiv">
+              <img id="suffering-bad_pic" src="images/doodles/notebook/circle_страдание.png" class="paperpic"/>
+            </div>
+            <i>Suffering is bad</i>
+          </summary>
+            <p>(forthcoming in <i>Synthese</i>) <a href="Suffering is bad.pdf" target="_blank" class="navvbar">[draft]</a><br>
+            <b>Thesis</b>: Necessarily, everyone would be intrinsically against the fact that anyone else was suffering, if they fully understood that fact; and that partially explains suffering’s 'agent-neutral' badness.</p>
             <details>
-              <summary style="font-weight:900"><i>account of suffering</i></summary>
-              <p>An affectively negative experience constitutes suffering to the degree that it <i>controls our attention.</i></p>
-            </details>
-            <details>
-              <summary style="font-weight:900"><i>account of negative affect</i></summary>
-              <p>An experience feels bad (is affectively negative) iff it's an instance of felt motivation <i>against</i> the object of our attention.</p>
-            </details>
-            <p>The core explanation I offer for the three puzzling cases at issue is that allowing ourselves to experience negative affect in those ways makes our highest-order motivation-related attitude one of <i>receptivity</i>. Despite being in essence just a form of observation, attentional receptivity is also an attitude of 'abiding' or presence, which contrasts sharply with the attitude intrinsic to our negative affect itself — roughly, the attitude of <i>not tolerating</i> the object of attention. The result, I argue, is that despite if anything increasing the share of attention controlled by (say) our grief, our receptivity to it can also make our <i>overall</i> experience more tolerable and even, sometimes, experiences of <i>beauty</i>.</p>
+              <summary style="color:rgb(96, 96, 96)"><i>Abstract</i></summary>
+                <p>Suffering, I argue, is bad. This paper supports that claim by defending a somewhat bolder-sounding one: namely that if anyone — even a sadistic 'amoralist' — fully understands the fact that someone else is suffering, then the only evaluative attitude they can possibly form towards the person's suffering as such is that of being <i>intrinsically against</i> it. I first argue that, necessarily, everyone is disposed to be intrinsically against their <i>own</i> suffering experiences, <i>holding fixed their specific overall degree of emotional aversiveness</i>, because any evaluative attitude other than 'being against' — including mere indifference — would in certain key circumstances make our suffering less emotionally aversive and thus different from the suffering experience (stipulatively) at issue. Second, fully understanding that someone else is having a given experience — Mary's experiencing a vividly blue sky, say, or Job's experiencing heart-rending grief — requires that we represent <i>experientially</i> their very instance of that experience-type (it requires, in other words, <i>token phenomenal concepts</i>). The result is that what goes for our own suffering goes for others', too: maintaining an accurate experiential representation of the fact that someone else is having a suffering experience with a specific degree of overall emotional aversiveness is only compatible with coming to be intrinsically against their suffering. So suffering is — 'objectively' — bad: it's only possible to respond with indifference towards anyone's suffering if we don't fully understand that they are suffering in the first place.</p>
+              </details>
           </details>
         </details>
-      <details id="fono" class = "papertitle" open>
-        <summary style="font-weight:900">
-          <div id="fono_picdiv" class="paperpicdiv">
-            <img id="fono_pic" src="images/doodles/notebook/circle_nelse.png" class="paperpic"/>
-          </div>
-          <i>The feeling of moral authority</i>
-        </summary>
-          <p><b>Thesis</b>: There are no moral requirements. I argue that sustaining the felt force of our strongest normative commitments (e.g., about what morality requires) is incompatible with fully appreciating the affective nature of affective states like 'the feeling of moral authority.' On that basis, I argue that nothing could possibly be the way the feeling of categorical normative force makes things seem — ultimately supporting a form of error theory about moral requirements</p>
-          <details>
-            <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
-            <p style="margin-bottom:0em">When we think something is morally impermissible — stealing and reading a neighbor's personal mail as a source of entertainment, say — that conviction makes things seem a certain way to us. In particular, and especially if we find ourselves tempted to do what we are fully convinced is morally impermissible, its seeming impermissibility is liable strike us as having a kind of 'authoritative normative force.' That might not always happen, but when it does, we experience that normative force as 'applying' to us (in a 'binding' way), as <i>wrong</i> or <i>bad</i> to ignore, as 'calling for' an overriding motivation against doing the impermissible-seeming action, … and so on.</p>
-            <p style="margin-bottom:0em">This paper starts with the observation that if anything is morally required, then the way things seem to us in such cases — that is, the way the 'feeling of moral authority' makes things seem — must be, at the bare minimum, coherent. I argue that it isn't, ultimately on the grounds that seeing things the way the feeling of moral authority makes things seem is incompatible with fully coming to grips with the role of affect and motivation in that feeling.</p>
+
+      <details id="in-prep" style="font-size:1em; margin-left:5em; margin-top:3em; clear:top" open>
+        <summary style="font-size:1.125em; font-weight:900; padding-bottom:0em; margin-left:-3.5em;">Papers in preparation</summary>
+
+        <details id="fun-frustration" class="papertitle" open>
+          <summary style="font-weight:900">
+            <div id="fun-frustration_picdiv" class="paperpicdiv">
+              <img id="fun-frustration_pic" src="images/doodles/notebook/circle_hammer-horn.png" class="paperpic"/>
+            </div>
+            <i>Negative affect and the puzzle of fun desire-frustration</i>
+          </summary>
+            <p>This paper defends my view of affective valence in detail, primarily by laying out its advantages over the going alternatives. The main advantages are (i) its compatibility with the findings and guiding assumptions of active researchers in affective and decision neuroscience, (ii) its relative simplicity, and especially (iii) its ability to handle the puzzle in the title: the puzzle of 'fun desire-frustration.'</p>
             <details>
-              <summary style="color:rgb(96, 96, 96)"><i>Coarse argument summary</i></summary>
-              <ol style="line-height:140%">
-                <!--<li>If anything is morally required, then the way things seem to us when we are thoroughly convinced that something is morally required must be coherent.</li>
-                <li>The way things seem to us when we are thoroughly convinced that something is morally required is coherent only if the 'feeling of moral authority' is coherent.</li>-->
-                <li style="margin-bottom:.25em">If fully appreciating the nature of a given mental state guarantees that we will see things as <i>not</i> being the way that mental state normally makes things seem, then that mental state is incoherent.
-                <li style="margin-bottom:.25em">Suppose we fully appreciate the nature of the purely affective/motivational <i>component</i> of the feeling of moral authority: specifically, we fully appreciate it <i>as</i> purely affective/motivational.</li>
-                <li style="margin-bottom:.25em">Then we fully appreciate that its purely-affective/motivational 'felt priority' over alternative mental states is perfectly paralleled by alternative mental states with the same felt affective/motivational priority, from within those mental states. Nothing 'breaks the tie' between ours and those.</li>
-                <li style="margin-bottom:.25em">Fully appreciating that nothing 'breaks the tie' is at odds with the way the feeling of moral authority makes things seem to us: normally, the feeling of moral authority makes the 'required-feeling' action, say, seem to have affective/motivational priority <i>come what may</i> and relative to all possible alternative mental states.</li>
-              </ol>
-              <div style="line-height:140%; width:2em; float:left; text-align:right; margin-left:.2em; top:-.2em;">c1.</div>
-              <div style="line-height:140%; width:calc(100%-2.5em); margin-left:2.5em; top:0;">So fully appreciating the nature of feeling of moral authority guarantees that we will see things as <i>not</i> being the way the feeling of moral authority normally makes things seem.</div>
-              <div style="width:2em; float:left; text-align:right; margin-left:.2em; bottom:0; margin-top:.1em; margin-bottom:-.25em">c2.</div>
-              <div style="width:calc(100%-2.5em); margin-left:2.5em; bottom:0;  margin-top:.1em; margin-bottom:-.25em">So the feeling of moral authority is incoherent.<!--nothing could be the way the feeling of moral authority makes things seem.--></div>
-              <div style="width:2em; float:left; text-align:right; margin-left:.2em; bottom:0;">C.</div>
-              <div style="width:calc(100%-2.5em); margin-left:2.5em; bottom:0;">So nothing is morally required.</div>
+              <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
+                <p>The puzzle is a problem for all theories of affective valence that try to cash out the experiential difference between positive and negative affect as the difference between satisfied and frustrated desires or desires that something be or not be the case. I give a series of examples — <i>enjoying a challenge</i>, for instance — that show, against those proposals, that we don't always feel to any degree negative about having our desires frustrated or in virtue of desiring that something not be the case. I propose instead that we distinguish positive and negative affect not in terms of their intentional objects but in terms of their 'attentional mode,' specifically as constituted by the way they motivate us with respect to their intentional objects: we feel negatively or positively towards something if we're motivated (roughly) <i>against</i> or <i>towards</i> it, respectively — where those are ultimately to be understood in terms of their role in the reward and punishment system familiar from the reinforcement learning and decision-making literature.</p>
               </details>
+          </details>
+        <details id="ku-to-chuui" class="papertitle" open>
+          <summary style="font-weight:900">
+            <div id="ku-to-chuui_picdiv" class="paperpicdiv">
+              <img id="ku-to-chuui_pic" src="images/doodles/notebook/circle_relaxing-eye.png" class="paperpic"/>
+            </div>
+            <i>Suffering and attention</i>
+          </summary>
+            <p>This paper gives a motivation- and attention-centered account of negative affect and an account of suffering as <i>attention-controlling</i> negative affect, and then uses those two accounts to explain a puzzling set of cases: cases in which allowing ourselves to suffer <i>more thoroughly</i> radically transforms our suffering in a way that makes us experience it as 'bearable' – or even beautiful. The three cases I consider are (i) 'acceptance-stage' grief, (ii) aesthetic experiences that are deeply moving even though (and because) they make us feel extreme sadness or even despair, and (iii) experiences accompanying meditation practices that involve focused attention on our own suffering.</p>
+            <!--<ul style="margin-top:.25em">
+              <li>'acceptance-stage' grief,</li>
+              <li>aesthetic experiences that are deeply moving even though (and because) they make us feel extreme sadness or even despair, and</li>
+              <li>experiences accompanying meditation practices that involve focused attention on our suffering.</li>
+            </ul>-->
+            <details>
+              <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
+              <details>
+                <summary style="font-weight:900"><i>account of suffering</i></summary>
+                <p>An affectively negative experience constitutes suffering to the degree that it <i>controls our attention.</i></p>
+              </details>
+              <details>
+                <summary style="font-weight:900"><i>account of negative affect</i></summary>
+                <p>An experience feels bad (is affectively negative) iff it's an instance of felt motivation <i>against</i> the object of our attention.</p>
+              </details>
+              <p>The core explanation I offer for the three puzzling cases at issue is that allowing ourselves to experience negative affect in those ways makes our highest-order motivation-related attitude one of <i>receptivity</i>. Despite being in essence just a form of observation, attentional receptivity is also an attitude of 'abiding' or presence, which contrasts sharply with the attitude intrinsic to our negative affect itself — roughly, the attitude of <i>not tolerating</i> the object of attention. The result, I argue, is that despite if anything increasing the share of attention controlled by (say) our grief, our receptivity to it can also make our <i>overall</i> experience more tolerable and even, sometimes, experiences of <i>beauty</i>.</p>
             </details>
-        </details>
-      <details id="suffering-bad" class = "papertitle" open>
-        <summary style="font-weight:900">
-          <div id="suffering-bad_picdiv" class="paperpicdiv">
-            <img id="suffering-bad_pic" src="images/doodles/notebook/circle_страдание.png" class="paperpic"/>
-          </div>
-          <i>Phenomenal concepts of other people's suffering</i>
-        </summary>
-          <p><b>Thesis</b>: Necessarily, everyone would be intrinsically against the fact that anyone else was suffering, if they fully understood that fact; and that partially explains suffering’s 'agent-neutral' badness.</p>
-          <details>
-            <summary style="color:rgb(96, 96, 96)"><i>Abstract</i></summary>
-              <p>Suffering, I argue, is bad. This paper supports that claim by defending a rather bolder one: namely that fully understanding the fact that someone else is suffering makes it impossible — even for sadistic 'amoralists' – not to care. Specifically, full understanding guarantees being intrinsically against (intrinsically <i>disvaluing</i>) their suffering. First, I argue, necessarily everyone would intrinsically disvalue their <i>own</i> suffering, because – unlike disvaluing – valuing (or even indifference) makes our suffering less emotionally aversive, in certain key circumstances, and thus importantly different from the suffering actually at issue. Next, fully understanding a token experience – Mary's blueness experience, or Job's grief – requires that we represent it experientially, using token phenomenal concepts. The result is that the only attitude compatible with fully understanding that someone is suffering is the one we would have towards our own: intrinsic disvaluing. So suffering is, 'objectively,' bad: anyone who fails to care about someone else's suffering just doesn't understand.</p>
-            </details>
-        </details>
-      </details>
-    </div>
+          </details>
+        <details id="fono" class = "papertitle" open>
+          <summary style="font-weight:900">
+            <div id="fono_picdiv" class="paperpicdiv">
+              <img id="fono_pic" src="images/doodles/notebook/circle_nelse.png" class="paperpic"/>
+            </div>
+            <i>The feeling of moral authority</i>
+          </summary>
+            <p><b>Thesis</b>: There are no moral requirements. I argue that sustaining the felt force of our strongest normative commitments (e.g., about what morality requires) is incompatible with fully appreciating the affective nature of affective states like 'the feeling of moral authority.' On that basis, I argue that nothing could possibly be the way the feeling of categorical normative force makes things seem — ultimately supporting a form of error theory about moral requirements</p>
+            <details>
+              <summary style="color:rgb(96, 96, 96)"><i>More details</i></summary>
+              <p style="margin-bottom:0em">When we think something is morally impermissible — stealing and reading a neighbor's personal mail as a source of entertainment, say — that conviction makes things seem a certain way to us. In particular, and especially if we find ourselves tempted to do what we are fully convinced is morally impermissible, its seeming impermissibility is liable strike us as having a kind of 'authoritative normative force.' That might not always happen, but when it does, we experience that normative force as 'applying' to us (in a 'binding' way), as <i>wrong</i> or <i>bad</i> to ignore, as 'calling for' an overriding motivation against doing the impermissible-seeming action, … and so on.</p>
+              <p style="margin-bottom:0em">This paper starts with the observation that if anything is morally required, then the way things seem to us in such cases — that is, the way the 'feeling of moral authority' makes things seem — must be, at the bare minimum, coherent. I argue that it isn't, ultimately on the grounds that seeing things the way the feeling of moral authority makes things seem is incompatible with fully coming to grips with the role of affect and motivation in that feeling.</p>
+              <details>
+                <summary style="color:rgb(96, 96, 96)"><i>Coarse argument summary</i></summary>
+                <ol style="line-height:140%">
+                  <!--<li>If anything is morally required, then the way things seem to us when we are thoroughly convinced that something is morally required must be coherent.</li>
+                  <li>The way things seem to us when we are thoroughly convinced that something is morally required is coherent only if the 'feeling of moral authority' is coherent.</li>-->
+                  <li style="margin-bottom:.25em">If fully appreciating the nature of a given mental state guarantees that we will see things as <i>not</i> being the way that mental state normally makes things seem, then that mental state is incoherent.</li>
+                  <li style="margin-bottom:.25em">Suppose we fully appreciate the nature of the purely affective/motivational <i>component</i> of the feeling of moral authority: specifically, we fully appreciate it <i>as</i> purely affective/motivational.</li>
+                  <li style="margin-bottom:.25em">Then we fully appreciate that its purely-affective/motivational 'felt priority' over alternative mental states is perfectly paralleled by alternative mental states with the same felt affective/motivational priority, from within those mental states. Nothing 'breaks the tie' between ours and those.</li>
+                  <li style="margin-bottom:.25em">Fully appreciating that nothing 'breaks the tie' is at odds with the way the feeling of moral authority makes things seem to us: normally, the feeling of moral authority makes the 'required-feeling' action, say, seem to have affective/motivational priority <i>come what may</i> and relative to all possible alternative mental states.</li>
+                </ol>
+                <div style="line-height:140%; width:2em; float:left; text-align:right; margin-left:.2em; top:-.2em;">c1.</div>
+                <div style="line-height:140%; width:calc(100% - 2.5em); margin-left:2.5em; top:0;">So fully appreciating the nature of feeling of moral authority guarantees that we will see things as <i>not</i> being the way the feeling of moral authority normally makes things seem.</div>
+                <div style="width:2em; float:left; text-align:right; margin-left:.2em; bottom:0; margin-top:.1em; margin-bottom:-.25em">c2.</div>
+                <div style="width:calc(100% - 2.5em); margin-left:2.5em; bottom:0;  margin-top:.1em; margin-bottom:-.25em">So the feeling of moral authority is incoherent.<!--nothing could be the way the feeling of moral authority makes things seem.--></div>
+                <div style="width:2em; float:left; text-align:right; margin-left:.2em; bottom:0;">C.</div>
+                <div style="width:calc(100% - 2.5em); margin-left:2.5em; bottom:0;">So nothing is morally required.</div>
+                </details>
+              </details>
+          </details>
+        </div>
   </div>
-</div>
-
-
 
 
 
