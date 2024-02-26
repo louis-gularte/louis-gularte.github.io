@@ -9,9 +9,7 @@
     <link href='homepage-style.css' rel='stylesheet'>
     <link href='pictures-style.css' rel='stylesheet'>
     <link href='homepage-style.css' rel='stylesheet'>
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
+    
     <script>
       function pickTwo() {
         var min = document.getElementById("min").value;
@@ -48,7 +46,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: monospace;
-        font-size: 12.5pt;
+        font-size: 11pt;
         color: black;
         text-align: center;
         display: flex;
@@ -76,13 +74,13 @@
         cursor: pointer;
         }
       .button {
-        background-color: white;
+        background-color: #f2f2f2;
         border: 1px solid #7f7f7f;
         color: black;
         padding: 6px 6px;
         text-align: center;
         text-decoration: none;
-        font-size: 12pt;
+        font-size: 10pt;
         display: inline-block;
         margin: 4px 2px;
         cursor: pointer;
@@ -99,11 +97,11 @@
         }
       .roundy {border-radius: 12px;}
       input[type="text"] {
-        font-size: 12pt;
+        font-size: 10pt;
         font-family: monospace;
-        background-color: #202020;
+        background-color: #f2f2f2;
         border: 1px solid #7f7f7f;
-        color: #b2b2b2;
+        color: black;
         text-align: center;
         }
       .slider {
@@ -140,7 +138,7 @@
         <input type="text" size="2" maxlength="2" id="max" value="3" onFocus="select()" /> 
         <br><br>pick:
         <input type="text" size="2" maxlength="2" id="cuantos" value="2" onFocus="select()" />
-        <div class="center" id="outcome" style="height:1.5em; padding:10pt; vertical-align: middle;"></div>
+        <div class="center" id="outcome" style="height:1.5em; padding:10pt; vertical-align: middle; font-size: 12pt; font-weight: bold"></div>
         <div id="SET">
           <input type="button" class="button roundy center" id="setbutton" value="generate" onClick="pickTwo()" />
           </div>
