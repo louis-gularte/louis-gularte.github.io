@@ -1,0 +1,157 @@
+ <!DOCTYPE html>
+    <html>
+  <head>
+   <title>random number(s)</title>
+   <link rel="icon" href="bell-stuff/bonsho.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="/bell-stuff/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/bell-stuff/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/bell-stuff/favicon-16x16.png">
+   <link rel="manifest" href="/site.webmanifest">
+   <link rel="mask-icon" href="/bell-stuff/safari-pinned-tab.svg" color="#5bbad5">
+   <link href='homepage-style.css' rel='stylesheet'>
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">
+
+    <script>
+      function pickTwo() {
+        var min = document.getElementById("min").value;
+        var max = document.getElementById("max").value
+        var cuantos = document.getElementById("cuantos").value
+        // Create a list of all possible numbers that the widget could pick.
+        const numbers = [];
+        const output = [];
+        for (let i = min; i <= max; i++) {
+          numbers.push(i);
+        }
+        let currentIndex = numbers.length, randomIndex;
+          while (currentIndex > 0) {
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [numbers[currentIndex], numbers[randomIndex]] = [
+              numbers[randomIndex], numbers[currentIndex]];
+          }
+        for (let i = 0; i < cuantos; i++) {
+          output.push(numbers[i]);
+        }
+        output.sort();
+        document.getElementById("outcome").innerHTML = output;
+      }
+      </script>
+    <style>
+      .alles {
+        position: absolute;
+        margin: 0;
+        top: 38.2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: monospace;
+        font-size: 12.5pt;
+        color: black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Set the height of the container to the viewport height */
+        }
+      .center {
+        margin: auto;
+        font-family: monospace;
+        color: black;
+        padding: 4px;
+        }
+      .buttonsmalltext {
+        background-color: #606060;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 9pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button {
+        background-color: white;
+        border: 1px solid #7f7f7f;
+        color: black;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button:hover {
+        background-color: #606060;
+        color: #b2b2b2;
+        }
+      .button:disabled {
+        opacity: .5;
+        }
+      .buttonsmalltext:disabled {
+        opacity: .5;
+        }
+      .roundy {border-radius: 12px;}
+      input[type="text"] {
+        font-size: 12pt;
+        font-family: monospace;
+        background-color: #202020;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        text-align: center;
+        }
+      .slider {
+        -webkit-appearance: none;
+        height: 5px;
+        border-radius: 2px;
+        background: #404040;
+        }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #606060;
+        }
+      .podbar {
+        bottom:0;
+        left:1em;
+        font-variant: small-caps;
+        color:#ffffff20;
+        position:fixed;
+        z-index:150;
+        _position:absolute;
+        _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        height:35px;
+      }
+      </style>
+     </head>
+  <body>
+    <div class="alles" width="100%" height="100%">
+      <div class="center" id="min_max_cuantos" width="100%">
+        min: <input type="text" size="2" maxlength="2" id="min" value="1" onFocus="select()" /> max:
+        <input type="text" size="2" maxlength="2" id="max" value="3" onFocus="select()" /> 
+        <br><br>pick:
+        <input type="text" size="2" maxlength="2" id="cuantos" value="2" onFocus="select()" />
+        <div class="center" id="outcome" style="height:1.5em; padding:10pt; vertical-align: middle;"></div>
+        <div id="SET">
+          <input type="button" class="button roundy center" id="setbutton" value="generate" onClick="pickTwo()" />
+          </div>
+        </div><br>
+      
+        <div style="line-height:90%;" width="100%">
+          <br>
+          </div>
+        <div style="text-align:center;">
+
+          </div>
+        </div>
+    </body>
+    </html>
