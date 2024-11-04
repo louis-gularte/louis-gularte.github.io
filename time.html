@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+    <html>
+  <head>
+   <title>time</title>
+   <link rel="icon" href="bell-stuff/bonsho.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="/bell-stuff/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="/bell-stuff/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/bell-stuff/favicon-16x16.png">
+   <link rel="manifest" href="/site.webmanifest">
+   <link rel="mask-icon" href="/bell-stuff/safari-pinned-tab.svg" color="#5bbad5">
+   <link href='homepage-style.css' rel='stylesheet'>
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">
+    <script>
+      function start() {
+        startTime();
+        document.body.style.backgroundColor = "black";
+        }
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500); // keeps function running every half second
+        }
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+       </script>
+    <style>
+      .alles {
+        position: absolute;
+        margin: 0;
+        top: 38.2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: monospace;
+        font-size: 12.5pt;
+        color: #b2b2b2;
+        text-align: center;
+        }
+      .center {
+        margin: auto;
+        font-family: monospace;
+        color: #b2b2b2;
+        padding: 4px;
+        }
+      .buttonsmalltext {
+        background-color: black;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 9pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button {
+        background-color: black;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12pt;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+      .button:hover {
+        background-color: #606060;
+        color: #b2b2b2;
+        }
+      .button:disabled {
+        opacity: .5;
+        }
+      .buttonsmalltext:disabled {
+        opacity: .5;
+        }
+      .roundy {border-radius: 12px;}
+      input[type="text"] {
+        font-size: 12pt;
+        font-family: monospace;
+        background-color: #202020;
+        border: 1px solid #7f7f7f;
+        color: #b2b2b2;
+        text-align: center;
+        }
+      .slider {
+        -webkit-appearance: none;
+        height: 5px;
+        border-radius: 2px;
+        background: #404040;
+        }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #606060;
+        }
+      .podbar {
+        bottom:0;
+        left:1em;
+        font-variant: small-caps;
+        color:#ffffff20;
+        position:fixed;
+        z-index:150;
+        _position:absolute;
+        _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+        height:35px;
+      }
+      </style>
+    </head>
+  <body onload = "start()">
+      <div class="alles" id="clock"></div>      
+    </body>
+    </html>
