@@ -37,7 +37,29 @@
         output.sort();
         document.getElementById("outcome").innerHTML = output;
       }
-      </script>
+        function getUrlParam(param) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === param) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        }
+      function setMaxValue() {
+        var forced_max = getUrlParam('max'); 
+        if (forced_max) {
+            document.getElementById("max").value = forced_max;
+        }
+      }
+      window.onload = setMaxValue;
+  </script>
     <style>
       .alles {
         position: absolute;
