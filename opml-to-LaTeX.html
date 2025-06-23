@@ -12,41 +12,98 @@
 <style>
   /*body { font-family: Arial, sans-serif; max-width: 600px; margin: 2rem auto; }*/
   body { max-width: 600px; margin: 2rem auto; }
-  textarea { width: 100%; height: 150px; margin-bottom: 1rem; }
+  textarea { width: 100%; height: 200px; margin-bottom: 1rem; }
+  .input-wrapper {
+    position: relative;
+    width: fit-content;
+    margin: auto; /* center the wrapper horizontally */
+  }
   h1 {text-align: center;}
   h2 {text-align: center;}
   button {
     display: block;
     margin: 1em auto;
     color: black;
-    background: LightGrey;
+    background: Gainsboro;
     padding: 0.5em 1.2em;
-    border: 2px solid LightGrey;
+    border: 1px solid Gainsboro;
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
   }
-  button:hover {background: Gainsboro;}
+  button:hover {background: WhiteSmoke;}
   button:disabled {
-    background: white;
+    background: WhiteSmoke;
     color: grey;
     opacity: 0.7;
+    cursor: default;
+  }
+
+  #inputText {
+    width: 600px;
+    height: 200px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    resize: vertical;
+    display: block;
   }
   
   #output { margin-top: 1rem; white-space: pre-wrap; background: #f4f4f4; padding: 1rem; border-radius: 5px; }
+
+  #resetBtn {
+    position: absolute;
+    bottom: 1em;
+    left: 100%;
+    margin-left: 0.75em;
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  #resetBtn:hover {
+    background: #ddd;
+  }
+
+  @media (max-width: 700px) {
+    .input-wrapper {
+      display: block;
+      position: relative;
+      width: fit-content;
+      margin: auto;
+    }
+  
+    #inputText {
+      width: 95vw;
+    }
+  
+    #resetBtn {
+      position: static;
+      float: right;
+      margin-top: 0.5em;
+    }
+  }
   
 </style>
 </head>
 <body>
 
 <h2>opml</h1>
-<textarea id="inputText" placeholder="Paste your text here..."></textarea>
+<div class="input-wrapper">
+  <textarea id="inputText" placeholder="Paste text here ..."></textarea>
+  <button id="resetBtn" onclick="resetFields()" style="font-size: 2em">↺</button>
+</div>
 <br />
 <button id="convertBtn" onclick="convertText()" disabled>convert</button>
 
 <h2>LaTeX</h2>
 <div id="output"></div>
-<button id="copyBtn" onclick="copyOutput() style="font-size: .8em">copy output</button>
+<button id="copyBtn" onclick="copyOutput() style="font-size: .8em">copy</button>
 
 
 <script>
@@ -95,6 +152,16 @@
     setTimeout(() => {
       copyBtn.textContent = originalText;
     }, 2000);
+  }
+
+  function resetFields() {
+    const inputBox = document.getElementById("inputText");
+    const outputEl = document.getElementById("output");
+    const convertBtn = document.getElementById("convertBtn");
+  
+    inputBox.value = "";
+    outputEl.textContent = "";
+    convertBtn.disabled = true;
   }
 </script>
 
