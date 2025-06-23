@@ -19,17 +19,17 @@
     display: block;
     margin: 1em auto;
     color: black;
+    background: grey;
     padding: 0.5em 1.2em;
     border: none;
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
   }
-  button:hover {background: white;}
-
+  button:hover {background: LightGrey;}
   button:disabled {
     background: white;
-    color: black;
+    color: grey;
     border: none;
     opacity: 0.7;
   }
@@ -47,6 +47,8 @@
 
 <h2>LaTeX</h2>
 <div id="output"></div>
+<button id="copyBtn" onclick="copyOutput()">copy output</button>
+
 
 <script>
 
@@ -75,34 +77,26 @@
       outputEl.textContent = "Something went wrong: " + err.message;
     }
   }
-  /*const apiUrl = 'https://opml-latex.onrender.com/convert';  
 
-  document.getElementById('convertBtn').addEventListener('click', async () => {
-    const input = document.getElementById('inputText').value.trim();
-    if (!input) {
-      alert('Please enter some text.');
-      return;
-    }
-    document.getElementById('output').textContent = 'Converting ...';
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: input }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'API error');
-      }
-
-      const data = await response.json();
-      document.getElementById('output').textContent = data.output_text;
-    } catch (err) {
-      document.getElementById('output').textContent = 'Error: ' + err.message;
-    }
-  });*/
+  function copyOutput() {
+    const output = document.getElementById("output").textContent;
+  
+    // Create a temporary textarea to copy from
+    const tempTextarea = document.createElement("textarea");
+    tempTextarea.value = output;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempTextarea);
+  
+    // Give feedback
+    const copyBtn = document.getElementById("copyBtn");
+    const originalText = copyBtn.textContent;
+    copyBtn.textContent = "copied!";
+    setTimeout(() => {
+      copyBtn.textContent = originalText;
+    }, 2000);
+  }
 </script>
 
 </body>
