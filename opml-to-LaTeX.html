@@ -19,18 +19,17 @@
     display: block;
     margin: 1em auto;
     color: black;
-    background: grey;
+    background: LightGrey;
     padding: 0.5em 1.2em;
-    border: none;
+    border: 2px solid LightGrey;
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
   }
-  button:hover {background: LightGrey;}
+  button:hover {background: Gainsboro;}
   button:disabled {
     background: white;
     color: grey;
-    border: none;
     opacity: 0.7;
   }
   
@@ -40,14 +39,14 @@
 </head>
 <body>
 
-<h1>opml</h1>
+<h2>opml</h1>
 <textarea id="inputText" placeholder="Paste your text here..."></textarea>
 <br />
 <button id="convertBtn" onclick="convertText()" disabled>convert</button>
 
 <h2>LaTeX</h2>
 <div id="output"></div>
-<button id="copyBtn" onclick="copyOutput()">copy output</button>
+<button id="copyBtn" onclick="copyOutput() style="font-size: .8em">copy output</button>
 
 
 <script>
