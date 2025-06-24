@@ -69,7 +69,6 @@
       background: #fff;
       display: block;
       box-sizing: border-box;
-      white-space: pre-wrap;
       margin: 0;
     }
     #inputText {
@@ -79,6 +78,7 @@
       min-height: 3em;
       background: #f4f4f4;
       font-size: .8em;
+      white-space: pre-wrap;
     }
     #inputText:focus, button:focus {
       outline: none;
@@ -148,15 +148,15 @@
 <div class="wrapper">
   <div class="textarea-group">
     <div class="text-label"><b>opml</b></div>
-    <textarea id="inputText"></textarea>
+    <textarea id="inputText" tabindex="1"></textarea>
   </div>
-  <button id="resetBtn" onclick="resetFields()" disabled>↺</button>
+  <button id="resetBtn" onclick="resetFields()" disabled tabindex="4">↺</button>
 </div>
 <div class="gappybit1"></div>
-<button id="convertBtn" onclick="convertText()" disabled>convert</button>
+<button id="convertBtn" onclick="convertText()" disabled tabindex="2">convert</button>
 <div class="gappybit2"></div>
 <div class="wrapper">
-  <button id="copyBtn" onclick="copyOutput()" disabled>
+  <button id="copyBtn" onclick="copyOutput()" disabled tabindex="3">
     <img src="copy.svg" alt="Copy icon" style="width:16px; height: 16px; vertical-align: middle;">
   </button>
   <div class="textarea-group">
