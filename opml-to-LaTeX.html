@@ -66,13 +66,8 @@
     border-radius: 50%;
     height: 1.25em;
     width: 1.25em;
-    cursor: pointer;
     white-space: nowrap;
     line-height: .1em;
-  }
-
-  #resetBtn:hover {
-    background: #fefefe;
   }
 
   @media (max-width: 700px) {
@@ -172,14 +167,11 @@
     }, 2000);
   }
 
-  function resetFields() {
-    const inputBox = document.getElementById("inputText");
-    const outputEl = document.getElementById("output");
-    const convertBtn = document.getElementById("convertBtn");
-  
+  function resetFields() {  
     inputBox.value = "";
     outputEl.textContent = "";
     convertBtn.disabled = true;
+    resetBtn.disabled = true;
   }
 </script>
 
