@@ -1,159 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ompl→LaTeX</title>
-<link rel="icon" href="workflowy_converter.png">
-<link href='https://fonts.googleapis.com/css?family=Spectral SC' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
-<link href='homepage-style.css' rel='stylesheet'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<style>
-  body { max-width: 600px; margin: 2rem auto; }
-  textarea { width: 100%; height: 200px; margin-bottom: 1rem; }
-  .input-wrapper {
-    position: relative;
-    width: fit-content;
-    margin: auto; /* center the wrapper horizontally */
-  }
-  h1 {text-align: center;}
-  h2 {text-align: center;}
-  button {
-    font-family: 'Spectral';
-    display: block;
-    margin: 1em auto;
-    color: black;
-    background: Gainsboro;
-    padding: 0.5em 1.2em;
-    border: 1px solid Gainsboro;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  button:hover {background: WhiteSmoke;}
-  button:disabled {
-    background: WhiteSmoke;
-    color: grey;
-    opacity: 0.7;
-    cursor: default;
-  }
-
-  #inputText {
-    width: 600px;
-    height: 200px;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fff;
-    resize: vertical;
-    display: block;
-  }
-
-  #inputText:focus {
-    outline: none;
-    /*border-color: #8a2be2; /* or any color you like */
-    box-shadow: 0 0 0 2px rgba(50, 200, 50, 0.3); /* optional glow effect */
-  }
-  
-  #output { 
-    width: 600px;
-    min-height: 2em;
-    height: fit-content;
-    resize: vertical;
-    margin-top: 1rem; 
-    font-family: 'Spectral';
-    white-space: pre-wrap; 
-    background: #f4f4f4; 
-    padding: 1rem; 
-    border-radius: 5px; }
-
-  #resetBtn {
-    position: absolute;
-    bottom: 0em;
-    left: 100%;
-    margin-left: 0.25em;
-    margin-bottom: 0em;
-    padding: 0em 0em;
-    font-size: 1.5em;
-    color: DimGrey;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    /*cursor: pointer;*/
-    white-space: nowrap;
-    line-height: .1em;
-  }
-
-  #resetBtn:not(:disabled):hover {
-    border: 1px solid DimGrey;
-    /*background: lightgrey;*/
-  }
-  
-  #copyBtn {
-    position: absolute;
-    top: 0em;
-    left: 100%;
-    margin-left: 0.25em;
-    margin-bottom: 0em;
-    padding: 0em 0em;
-    font-size: .25em;
-    color: Grey;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    /*cursor: pointer;*/
-    white-space: nowrap;
-    /*line-height: .1em;*/
-  }
-
-  #copyBtn:not(:disabled):hover {
-    border: 1px solid DimGrey;
-    /*background: lightgrey;*/
-  }
-
-  @media (max-width: 700px) {
-    .input-wrapper {
-      display: block;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ompl→LaTeX</title>
+  <link rel="icon" href="workflowy_converter.png">
+  <link href='https://fonts.googleapis.com/css?family=Spectral SC' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Spectral' rel='stylesheet'>
+  <link href='homepage-style.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <style>
+    body { 
+      max-width: 700px;
+      margin: 2rem auto;
+    }
+    .text-label {
+      font-family: 'Courier';
+      width: 100%;
+      margin: 0 0 0 -2.5vw;
+      padding: 0;
+      height: 30px;
+      top: 0;
+      text-align: left;
+      font-size: 1.5em;
+      font-variant: small-caps;
+    }
+    .wrapper {
       position: relative;
-      width: fit-content;
       margin: auto;
+      width: min(700px, 90vw);
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
-  
+    .textarea-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      font-family: 'Consolas';
+      display: block;
+      margin: auto;
+      color: black;
+      background: Gainsboro;
+      padding: 0.5em 1.2em;
+      border: 1px solid Gainsboro;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {background: WhiteSmoke;}
+    button:disabled {
+      background: white;
+      color: grey;
+      opacity: 0.4;
+      cursor: default;
+    }
+    #inputText,
+    #output {
+      width: 100%;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      background: #fff;
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+    }
     #inputText {
-      width: 95vw;
+      height: 200px;
     }
-  
+    #output {
+      min-height: 3em;
+      background: #f4f4f4;
+    }
+    #inputText:focus, button:focus {
+      outline: none;
+      /*border-color: #8a2be2; /* or any color you like */
+      box-shadow: 0 0 0 2px rgba(50, 200, 50, 0.3); /* optional glow effect */
+    }
+    #resetBtn,
+    #copyBtn {
+      position: absolute;
+      margin: 0 0 0 10px;
+      left: 100%;
+      height: 40px;
+      width: 40px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: #f5f5f5;
+      color: DimGrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     #resetBtn {
-      position: static;
-      float: right;
-      margin-top: 0.5em;
+      color: DimGrey;
+      line-height: .1em;
+      font-size: 1.5em;
+      bottom: 0;
     }
-  }
-  
-</style>
+    #resetBtn:not(:disabled):hover, #copyBtn:not(:disabled):hover {
+      border: 1px solid DimGrey;
+      /*background: lightgrey;*/
+    }
+    #copyBtn {
+      top: 30px;
+    }
+    .gappybit1 {
+      height: 50px;
+    }
+    .gappybit2 {
+      height: 20px;
+    }
+
+    @media (max-width: 760px) {
+      #resetBtn {
+        position: static;
+        margin-top: 10px;
+      }
+      #copyBtn {
+        position: static;
+        margin-bottom: -20px;
+      }
+      .gappybit1 {
+        height: 0px;
+      }
+      .gappybit2 {
+        height: 0;
+      }
+        
+    }
+    
+  </style>
 </head>
 <body>
 
-<h2>opml</h1>
-<div class="input-wrapper">
-  <textarea id="inputText" placeholder="Paste text here ..."></textarea>
+<br>
+<div class="wrapper">
+  <div class="textarea-group">
+    <div class="text-label"><b>opml</b></div>
+    <textarea id="inputText"></textarea>
+  </div>
   <button id="resetBtn" onclick="resetFields()" disabled>↺</button>
 </div>
+<div class="gappybit1"></div>
 <button id="convertBtn" onclick="convertText()" disabled>convert</button>
-
-<br />
-
-<h2>LaTeX</h2>
-<div class="input-wrapper">
-  <div id="output"></div>
-  <button id="copyBtn" onclick="copyOutput()" style="font-size: .6em" disabled>
+<div class="gappybit2"></div>
+<div class="wrapper">
+  <button id="copyBtn" onclick="copyOutput()" disabled>
     <img src="copy.svg" alt="Copy icon" style="width:16px; height: 16px; vertical-align: middle;">
   </button>
+  <div class="textarea-group">
+    <div class="text-label">LaTeX</div>
+    <div id="output"></div>
+  </div>
 </div>
 
 <script>
