@@ -108,7 +108,7 @@
 
 <h2>LaTeX</h2>
 <div id="output"></div>
-<button id="copyBtn" onclick="copyOutput() style="font-size: .8em">copy</button>
+<button id="copyBtn" onclick="copyOutput() style="font-size: .8em" disabled>copy</button>
 
 
 <script>
@@ -116,11 +116,22 @@
   const inputBox = document.getElementById("inputText");
   const convertBtn = document.getElementById("convertBtn");
   const resetBtn = document.getElementById("resetBtn");
+  const outputEl = document.getElementById("output");
+  const copyBtn = document.getElementById("copyBtn");
 
   inputBox.addEventListener("input", () => {
     convertBtn.disabled = inputBox.value.trim() === "";
     resetBtn.disabled = inputBox.value.trim() === "";
   });
+
+  // Watch for changes to outputText
+  const observer = new MutationObserver(() => {
+    const hasOutput = outputEl.textContent.trim().length > 0;
+    copyBtn.disabled = !hasOutput;
+  });
+  
+  // Set it to watch for changes to the contents
+  observer.observe(outputEl, { childList: true, subtree: true });
 
   async function convertText() {
     const input = document.getElementById("inputText").value;
