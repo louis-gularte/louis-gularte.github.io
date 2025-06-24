@@ -57,19 +57,23 @@
     bottom: 0em;
     left: 100%;
     margin-left: 0.25em;
+    margin-bottom: 0em;
     padding: 0em 0em;
-    font-size: 2em;
-    background: #eee;
+    font-size: 1.5em;
+    color: DimGrey;
+    background: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 50%;
-    height: 2.5px;
-    width: 2.5px;
+    height: 1.25em;
+    width: 1.25em;
     cursor: pointer;
     white-space: nowrap;
+    line-height: .1em;
   }
 
+
   #resetBtn:hover {
-    background: #ddd;
+    background: #fefefe;
   }
 
   @media (max-width: 700px) {
@@ -112,9 +116,11 @@
 
   const inputBox = document.getElementById("inputText");
   const convertBtn = document.getElementById("convertBtn");
+  const resetBtn = document.getElementById("resetBtn");
 
   inputBox.addEventListener("input", () => {
     convertBtn.disabled = inputBox.value.trim() === "";
+    resetBtn.disabled = inputBox.value.trim() === "";
   });
 
   async function convertText() {
