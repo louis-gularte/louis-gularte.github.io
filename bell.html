@@ -73,9 +73,9 @@
       .alles {
         position: absolute;
         margin: 0;
-        top: 38.2%;
+        top: 10vh;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%);
         font-family: monospace;
         font-size: 12.5pt;
         color: #b2b2b2;
@@ -145,15 +145,20 @@
         }
       .podbar {
         bottom:0;
-        left:1em;
+        left: clamp(.5vw, 1em, 1vw);
+        font-size: clamp(1vw, .75em, 5vw);
         font-variant: small-caps;
         color:#ffffff20;
+        background-color: rgba(0, 0, 0, .7);
         position:fixed;
+        justify-content: center;
+        padding: clamp(.05vw, .325em, 2.5vw);
         z-index:150;
+        height: clamp(2vw, 1em, 5vw);
+        width: clamp(5vw, 4em, 12vw);
         _position:absolute;
         _top:expression(eval(document.documentElement.scrollTop+
         (document.documentElement.clientHeight-this.offsetHeight)));
-        height:35px;
       }
       </style>
     <audio id="bell">
@@ -163,16 +168,13 @@
   <body onload = "start()">
     <div class="alles">
       <div class="center" id="clock"></div>
-      
-        <br><br><br><br><br>
-      <p class="center">alarm time</p>
-      
+      <br>
+      <p class="center" style="font-size: .5em">alarm time</p>
         <div style="line-height:90%;">
-          <br>
           </div>
       <div class="center" id="hrminsecinputs">
-        <input type="text" size="2" maxlength="2" id="hrs" onFocus="select()" /> :
-        <input type="text" size="2" maxlength="2" id="mts" onFocus="select()" /> :
+        <input type="text" size="2" maxlength="2" id="hrs" onFocus="select()" /><span style="font-size:.5em"> : </span>
+        <input type="text" size="2" maxlength="2" id="mts" onFocus="select()" /><span style="font-size:.5em"> : </span>
         <input type="text" size="2" maxlength="2" id="scs" onFocus="select()" />
         </div>
       
@@ -207,7 +209,7 @@
         </div>
         </div>
       <div class="podbar">
-        <a href="index.html" style="color:#7f7f7f;">home</a>
+        <a href="index.html" style="color:#7f7f7f; top: 50%; transform: translateY(-50%)">home</a>
       </div>
     </body>
     </html>
