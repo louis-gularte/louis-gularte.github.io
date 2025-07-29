@@ -157,12 +157,13 @@
 <button id="convertBtn" onclick="convertText()" disabled tabindex="2">convert</button>
 <div class="gappybit2"></div>
 <div class="wrapper">
-  <button id="copyBtn" onclick="copyOutput()" disabled tabindex="3">
+  <button id="copyBtn" onclick="copyOutput();getLatexWordCount()" disabled tabindex="3">
     <img src="copy.svg" alt="Copy icon" style="width:16px; height: 16px; vertical-align: middle;">
   </button>
   <div class="textarea-group">
     <div class="text-label">LaTeX</div>
     <div id="output"></div>
+    <p>Words: <span id="wordcount"></span></p>
   </div>
 </div>
 <div class="bottom-name-tag" style="background-color: rgba(360, 360, 360, .0); box-shadow:0px 0px 5px 10px rgba(360, 360, 360, .0); padding: .5em;">
@@ -170,7 +171,6 @@
 </div>
 
 <script>
-
   const inputBox = document.getElementById("inputText");
   const convertBtn = document.getElementById("convertBtn");
   const resetBtn = document.getElementById("resetBtn");
@@ -216,6 +216,18 @@
       outputEl.textContent = "Something went wrong: " + err.message;
     }
   }
+
+  async function getLatexWordCount() {
+    const latex = document.getElementById("output").value;
+    const res = await fetch("https://opml-latex.onrender.com/wordcount", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ text: latex })
+    });
+    const data = await res.json();
+    document.getElementById("wordcount").textContent = data.wordcount;
+  }
+
 
   function copyOutput() {
     const output = document.getElementById("output").textContent;
