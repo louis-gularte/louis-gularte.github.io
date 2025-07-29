@@ -218,7 +218,7 @@
   }
 
   async function getLatexWordCount() {
-    const latex = document.getElementById("output").value;
+    const latex = document.getElementById("output").textContent;
     const res = await fetch("https://opml-latex.onrender.com/wordcount", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
