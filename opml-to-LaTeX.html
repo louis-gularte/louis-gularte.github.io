@@ -190,14 +190,15 @@
     resetBtn.disabled = inputBox.value.trim() === "";
   });
 
+  convertBtn.addEventListener("click", async () => {
+    await convertText();   // Wait until convertText() finishes
+    getLatexWordCount();   // Now run word count
+  });
+
   // Watch for changes to outputText
   const observer = new MutationObserver(() => {
     const hasOutput = outputEl.textContent.trim().length > 0;
     copyBtn.disabled = !hasOutput;
-
-    if (hasOutput) {
-      getLatexWordCount();
-    }
   });
   
   // Set it to watch for changes to the contents
