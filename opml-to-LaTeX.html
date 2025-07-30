@@ -154,9 +154,9 @@
   <button id="resetBtn" onclick="resetFields()" disabled tabindex="4">↺</button>
 </div>
 <div class="gappybit1"></div>
-<button id="convertBtn" onclick="convertText();getLatexWordCount()" disabled tabindex="2">convert</button>
+<button id="convertBtn" onclick="convertText()" disabled tabindex="2">convert</button>
 <div class="gappybit2"></div>
-<div style="text-align:center">Words: <span id="wordcount"></span></div>
+<div style="text-align:center; font-size: .8em;">words: <span id="wordcount"></span></div>
 <div class="wrapper">
   <button id="copyBtn" onclick="copyOutput()" disabled tabindex="3">
     <img src="copy.svg" alt="Copy icon" style="width:16px; height: 16px; vertical-align: middle;">
@@ -194,6 +194,10 @@
   const observer = new MutationObserver(() => {
     const hasOutput = outputEl.textContent.trim().length > 0;
     copyBtn.disabled = !hasOutput;
+
+    if (hasOutput) {
+      getLatexWordCount();
+    }
   });
   
   // Set it to watch for changes to the contents
