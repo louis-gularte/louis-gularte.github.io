@@ -233,18 +233,20 @@
   }
 
   async function getLatexWordCount() {
-    const latex = document.getElementById("output").textContent;
-    const res = await fetch("https://opml-latex.onrender.com/wordcount", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ text: latex })
-    });
+      const latex = document.getElementById("output").textContent;
 
-    const data = await res.json();
+      const res = await fetch("https://opml-latex.onrender.com/wordcount", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ text: latex })
+      });
 
-    document.getElementById("wordcount-total").textContent = data.Total ?? 0;
-    document.getElementById("wordcount-main").textContent = data.Main ?? 0;
-    document.getElementById("wordcount-fns").textContent = data.Footnotes ?? 0;
+      const data = await res.json();
+
+      // Update the page
+      wrdCount.textContent = data.wordcount;
+      wrds_main.textContent = data.main;
+      wrds_fns.textContent = data.footnotes;
   }
   /*async function getLatexWordCount() {
     const latex = document.getElementById("output").textContent;
