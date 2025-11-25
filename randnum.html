@@ -54,8 +54,12 @@
         }
       function setMaxValue() {
         var forced_max = getUrlParam('max'); 
+        var frced_chuz = getUrlParam('chuz')
         if (forced_max) {
             document.getElementById("max").value = forced_max;
+        }
+        if (frced_chuz) {
+            document.getElementById("cuantos").value = frced_chuz;
         }
       }
       window.onload = setMaxValue;
